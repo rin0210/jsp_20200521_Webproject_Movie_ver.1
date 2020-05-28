@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Movie</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Vidaloka" rel="stylesheet">
@@ -31,30 +31,22 @@
 
 </head>
 <body>
-    <div class="comment-form-wrap pt-5">
+    <div class="comment-form-wrap pt-5 bg-dark">
         <h3 class="mb-5-profile">프로필 변경</h3>
-        <form action="#" class="comment-form p-5 ">
-          <div class="form-group">
-            <label for="name">Name *</label>
-            <input type="text" class="form-control" id="name">
+        <form action="MainServlet?command=Movie_ProfileUpdate" method = "post" class="comment-form p-5" enctype="multipart/form-data">
+          <div class="form-group profile">
+            <label for="name">닉네임 *</label>
+            <input type="text" class="form-control" id="name" name="name">
           </div>
+          
           <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" class="form-control" id="email">
+            <label for="image">프로필사진</label>
+            <input type="file" class="form-control" id="imgfile" name="imgfile">
           </div>
-          <div class="form-group">
-            <label for="website">Website</label>
-            <input type="url" class="form-control" id="website">
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
-          </div>
+        
           <div class="form-group">
             <input type="submit" value="프로필 변경" class="btn py-3 px-4 btn-primary">
           </div>
-
         </form>
       </div>
 

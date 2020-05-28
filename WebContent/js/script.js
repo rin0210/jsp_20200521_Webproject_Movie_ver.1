@@ -17,8 +17,9 @@ function idCheck() {
 		return;
 	}
 
-	var url = "MainServlet?command=Movie_IdCheck" + "/"
+	var url ="MainServlet?command=Movie_IdCheck&id="
 			+ document.joinForm.id.value;
+	alert(url);
 
 	window
 			.open(url, "_blank_1",
@@ -157,5 +158,13 @@ function loginCheck() {
 		return false;
 	}
 	return true;
+}
+
+function profileUpdate(){
+	var url = "MainServlet?command=Movie_ProfileUpdate_Form";
+
+window
+	.open(url, "_blank_1",
+			"toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=500,height=510");
 }
 

@@ -8,19 +8,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class LoginChkAction implements Action {
+import db.MemberDAO;
+import db.MemberDTO;
+
+public class MaPageAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String nowId = (String) session.getAttribute("sessionId");
-		if (nowId==null) {
-			String view = "/jsp/login.jsp";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-			dispatcher.forward(request, response);
-		} else {
-			System.out.println("로그인상태");
-		}
+		String id = (String) session.getAttribute("sessionId");
+		
+		MemberDAO mdao = MemberDAO.getInstance();
+		MemberDTO mdto = mdao.selMyInfo(id);
+		request.setAttribute("mdto", mdto);
+		
+		String view = "jsp/myPage.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+		dispatcher.forward(request, response);
 	}
-
 }

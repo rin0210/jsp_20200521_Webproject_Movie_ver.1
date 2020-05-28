@@ -62,7 +62,5 @@ public class ViewAction implements Action {
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);
 		
-		// 대댓글 가져오기
-		
 	}
 }

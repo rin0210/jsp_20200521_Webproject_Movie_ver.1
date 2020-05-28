@@ -32,12 +32,35 @@
 
 	<c:if test="${result==4 }">
 		<script type="text/javascript">
-		if (!alert("사용 가능한 아이디입니다.")) {
-			opener.joinForm.idChkOk.value = "yes";
-			window.close();
-		}
+			if (!alert("사용 가능한 아이디입니다.")) {
+				opener.joinForm.idChkOk.value = "yes";
+				window.close();
+			}
 		</script>
 	</c:if>
+
+	<c:if test="${result==5 }">
+		<script type="text/javascript">
+			alert("정상적으로 수정되었습니다.");
+			opener.location.reload();
+			window.close();
+		</script>
+	</c:if>
+
+	<c:if test="${result==6 }">
+		<script type="text/javascript">
+			alert("회원 전용 페이지입니다.");
+			history.back();
+		</script>
+	</c:if>
+
+	<c:if test="${result==7 }">
+		<script type="text/javascript">
+			alert("결제가 완료되었습니다.");
+			document.location.href = "index.jsp"
+		</script>
+	</c:if>
+
 
 </body>
 </html>

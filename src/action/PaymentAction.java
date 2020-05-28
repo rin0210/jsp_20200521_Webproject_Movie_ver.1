@@ -8,23 +8,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class Identification implements Action {
+import db.MemberDAO;
+
+public class PaymentAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String level = request.getParameter("type");
 		HttpSession session = request.getSession();
-		String nowId = (String) session.getAttribute("sessionId");
-		
-		if (nowId==null) {
-			String view = "jsp/login.jsp";
+		String id = (String) session.getAttribute("sessionId");
+
+		MemberDAO mdao = MemberDAO.getInstance();
+		if (mdao.updateLevel(Integer.valueOf(level), id)) {
+			String view = "/jsp/alert.jsp";
+			request.setAttribute("result", 7);
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
-			
-		} else {
-			new MaPageAction().execute(request, response);
 		}
-		
-		
+//		new HomeAction().execute(request, response);
 	}
-
 }

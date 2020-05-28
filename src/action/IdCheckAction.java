@@ -10,15 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 import db.MemberDAO;
 
 public class IdCheckAction implements Action {
-	String id = null;
 
-	public IdCheckAction(String command) {
-		int num = command.indexOf("/");
-		id = command.substring(num + 1);
+	public IdCheckAction() {
 	}
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("id");
 		System.out.println("체크할 아이디: " + id);
 		MemberDAO mdao = MemberDAO.getInstance();
 

@@ -43,6 +43,8 @@ public class MemberDAO {
 
 		} finally {
 			try {
+				if (rs != null)
+					rs.close();
 				if (stmt != null)
 					stmt.close();
 				if (conn != null)
@@ -109,6 +111,8 @@ public class MemberDAO {
 
 		} finally {
 			try {
+				if (rs != null)
+					rs.close();
 				if (stmt != null)
 					stmt.close();
 				if (conn != null)
@@ -120,4 +124,95 @@ public class MemberDAO {
 		return searDTO;
 	}
 
+	// 회원 정보 불러오기
+	public MemberDTO selMyInfo(String id) {
+		MemberDTO searDTO = null;
+		try {
+			conn = DBManager.getConnection();
+			stmt = conn.createStatement();
+			String sql = "select * from member where id='" + id + "'";
+			rs = stmt.executeQuery(sql);
+			if (rs.next()) {
+				searDTO = new MemberDTO();
+				searDTO.setName(rs.getString("name"));
+				searDTO.setId(rs.getString("id"));
+				searDTO.setPwd(rs.getString("pwd"));
+				searDTO.setTel(rs.getString("tel"));
+				searDTO.setLev(rs.getInt("lev"));
+				searDTO.setImg(rs.getString("img"));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (stmt != null)
+					stmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return searDTO;
+	}
+
+	// 이미지 파일 등록(수정)
+	public boolean updateProfile(String name, String img, String id) {
+		String sql = "update member set name = ?, img = ? where id = ?";
+
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, img);
+			pstmt.setString(3, id);
+			pstmt.executeUpdate();
+			return true;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+
+	// 회원 레벨 수정
+	public boolean updateLevel(int lev, String id) {
+		String sql = "update member set lev = ? where id = ?";
+
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, lev);
+			pstmt.setString(2, id);
+			pstmt.executeUpdate();
+			return true;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
 }

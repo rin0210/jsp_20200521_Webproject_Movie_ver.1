@@ -7,8 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-<title>Stylistic - Free Bootstrap 4 Template by Colorlib</title>
+<title>Movie</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -80,7 +79,7 @@
 			<header class="header-mycontents">
 				<div class="container">
 					<div class="colorlib-navbar-brand">
-						<a class="colorlib-logo" href="javascript:;">Movie<br> <span></span></a>
+						<a class="colorlib-logo" href="MainServlet?command=Movie_Home">Movie<br> <span></span></a>
 					</div>
 					<nav class="nav-main">
 						<div class="collapse navbar-collapse"
@@ -91,13 +90,13 @@
 									class="nav-link" href="MainServlet?command=Movie_Home">홈 <span
 										class="sr-only">(current)</span></a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="category.html">영화 </a></li>
+									href="MainServlet?command=Movie_Category">영화 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="mycontents.html">찜한콘텐츠 </a></li>
+									href="MainServlet?command=Movie_MyContents">찜한콘텐츠 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
 									href="blog.html">고객문의 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="login.html">마이페이지&ensp;&ensp;</a></li>
+									href="MainServlet?command=Movie_Identification">마이페이지&ensp;&ensp;</a></li>
 							</div>
 							<!-- Search Form -->
 							<div class="nav-item-img-div">
@@ -111,8 +110,8 @@
 									class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a></li>
 							</div>
 						</ul>
+					</nav>
 				</div>
-				</nav>
 				<div class="header-search-form ml-auto">
 					<form action="#">
 						<input type="search" class="form-control form-control-search"
@@ -390,7 +389,6 @@
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 		<script src="js/google-map.js"></script>
 		<script src="js/main.js"></script>
-		<script src="js/windowopen.js"></script>
 </body>
 
 </html>

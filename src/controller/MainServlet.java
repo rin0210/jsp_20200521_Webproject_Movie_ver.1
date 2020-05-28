@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,6 +38,19 @@ public class MainServlet extends HttpServlet {
 		
 		String command = request.getParameter("command");
 		System.out.println("MainServlet에서 요청 받음을 확인: " + command);
+		/**
+		 * 아시겠지만, 'multipart/form-data'을 사용하면 request.getParameter()로 값을 받을 수 없다. 하지만,
+		 * action부분에 이런식으로 하면 충분히(?) 가능하다.
+		 * 
+		 */
+		if(command.equals("Movie_ProfileUpdate")) { 
+			// 여기를 바꿔주면 다운받는 경로가 바뀜
+			String savePath = "/images/profile_images"; // 미리 폴더만들어두어야함
+			ServletContext context = getServletContext(); // 실제 물리적인 디렉토리 위치(c:로 시작하는 위치 (c드라이브에서))
+			String uploadFilePath = context.getRealPath(savePath);
+			request.setAttribute("uploadFilePath", uploadFilePath);
+			System.out.println(uploadFilePath + "컨트롤러");
+		}
 		ActionFactory af = ActionFactory.getInstance();
 		Action action = af.getAction(command);
 		if (action != null) {

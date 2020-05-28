@@ -6,6 +6,15 @@ public class MemberDTO {
 	private String pwd;
 	private String tel;
 	private int lev;
+	private String img;
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
 
 	public String getName() {
 		return name;

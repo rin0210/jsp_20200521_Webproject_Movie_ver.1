@@ -933,6 +933,12 @@ pre {
     -ms-flex: 0 0 83.33333%;
     flex: 0 0 83.33333%;
     max-width: 83.33333%; }
+  .col-md-1010{
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 90%;
+    flex: 0 0 90%;
+    max-width: 90%;
+  }
   .col-md-11 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 91.66667%;
@@ -6701,6 +6707,10 @@ button.bg-dark:focus {
 .mb-5-rc{
   margin-bottom: 0.6rem !important;
 }
+.mb-5-profile{
+  margin-bottom: 3rem !important;
+  margin-left: 1.7em !important;
+}
 .ml-5,
 .mx-5 {
   margin-left: 3rem !important; }
@@ -6723,6 +6733,11 @@ button.bg-dark:focus {
 .pl-0,
 .px-0 {
   padding-left: 0 !important; }
+
+.px-00{
+  padding: 2em !important;
+  padding-left: 4em !important;
+}  
 
 .p-1 {
   padding: 0.25rem !important; }
@@ -6786,6 +6801,10 @@ button.bg-dark:focus {
 .pl-3,
 .px-3 {
   padding-left: 1rem !important; }
+  
+.py-33{
+  padding-bottom: 0.5em !important;
+}  
 
 .p-4 {
   padding: 1.5rem !important; }
@@ -8698,6 +8717,17 @@ header {
     background: rebeccapurple;
     border: 1px solid rebeccapurple;
     color: #fff; }
+  .btn-page  {
+    margin-right: 1em;
+  }
+   .logout-div .btn {
+    border-radius: 5px !important;
+    font-size: 14px;
+}
+	.logout-div{
+    margin-left: 1em;
+    margin-bottom: -2em;
+  }
     .btn.btn-primary:hover {
       border: 1px solid black;
       background: black;
@@ -8962,7 +8992,7 @@ header {
 .services .info {
   width: 100%; }
   .services .info h3 {
-    font-size: 24px;
+    font-size: 20px;
     color: #fff; }
 
 @media (min-width: 992px) {
@@ -9099,11 +9129,11 @@ header {
     margin-bottom: 30px; } }
 
 .model-info h3 {
-  font-size: 40px;
+  font-size: 30px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+  /* color: transparent; */
+  /* -webkit-text-fill-color: transparent; */
   /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #fff; }
@@ -9236,7 +9266,7 @@ header {
 
 .form-control {
   height: 52px !important;
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: #2f2f2f !important;
   color: #737373 !important;
   font-size: 18px;
   border-radius: 0px;
@@ -9245,8 +9275,6 @@ header {
   border: 1px solid #333333; }
   .form-control:focus, .form-control:active {
     border-color: #4d4d4d; }
-
-
 
 textarea.form-control {
   height: inherit !important; }
@@ -9336,6 +9364,16 @@ textarea.form-control {
 .ftco-section-catogory-mine{
   padding-top: 9.5em;
   min-height: 800px !important;
+}
+
+.ftco-section-catogory-mypage{
+  padding-top: 12em;
+  /* min-height: 700px !important; */
+
+}
+
+.ftco-section-mypage-2{
+  padding: 3em 0;
 }
 
 .ftco-no-pt {
@@ -10087,13 +10125,13 @@ textarea.form-control {
     width: 100%;
     clear: both;
     list-style: none; }
-   .comment-list .children li {
+  .comment-list .children li {
       padding: 0;
       margin: 1.5em 0 -2em 0;
       float: left;
       width: 100%;
       clear: both;
-      list-style: none; }   
+      list-style: none; } 
     .comment-list li .vcard {
       width: 80px;
       float: left; }
@@ -10573,4 +10611,23 @@ footer{
 
 .comment-list>li{
   float: left;
+}
+
+.mypage-overview{
+  margin-top: 4em;
+}
+
+.please{
+  padding: 5em !important;
+}
+
+.services .info p{
+  font-size: 18px !important;
+}
+
+input[type="file"] {
+  font-size: 14px;
+  padding: 13px;
+}
+
 }

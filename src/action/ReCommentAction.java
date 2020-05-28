@@ -39,18 +39,19 @@ public class ReCommentAction implements Action {
 				commentSeq++;
 				System.out.println("commentSeq: "+commentSeq);
 			}
-		} else {
-			commentSeq = commentSeq + 1;
-
-			for (CommentDTO c : list) {
-				if (commentSeq == c.getSeq() && (commentLvl + 1) == c.getLvl()) {
-					commentSeq++;
-					if ((commentLvl + 1) > c.getLvl()) {
-						break;
-					}
-				}
-			}
-		}
+		} 
+//		else {
+//			commentSeq = commentSeq + 1;
+//
+//			for (CommentDTO c : list) {
+//				if (commentSeq == c.getSeq() && (commentLvl + 1) == c.getLvl()) {
+//					commentSeq++;
+//					if ((commentLvl + 1) > c.getLvl()) {
+//						break;
+//					}
+//				}
+//			}
+//		}
 		
 		 cdto.setMovieno(Integer.valueOf(num));
 		 cdto.setId(id);

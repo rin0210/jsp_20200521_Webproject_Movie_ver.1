@@ -5,35 +5,35 @@
 <html lang="en">
 
 <head>
-<title>Stylistic - Free Bootstrap 4 Template by Colorlib</title>
+<title>Movie</title>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link
-	href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
+	href="<%=request.getContextPath()%>/https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
 	rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Vidaloka"
+<link href="<%=request.getContextPath()%>/https://fonts.googleapis.com/css?family=Vidaloka"
 	rel="stylesheet">
 
-<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/animate.css">
 
-<link rel="stylesheet" href="css/owl.carousel.min.css">
-<link rel="stylesheet" href="css/owl.theme.default.min.css">
-<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/owl.carousel.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/magnific-popup.css">
 
-<link rel="stylesheet" href="css/aos.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/aos.css">
 
-<link rel="stylesheet" href="css/ionicons.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/ionicons.min.css">
 
-<link rel="stylesheet" href="css/bootstrap-datepicker.css">
-<link rel="stylesheet" href="css/jquery.timepicker.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/jquery.timepicker.css">
 
 
-<link rel="stylesheet" href="css/flaticon.css">
-<link rel="stylesheet" href="css/icomoon.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/flaticon.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/icomoon.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
 
 </head>
 
@@ -41,30 +41,29 @@
 	<!--카테고리 메뉴-->
 	<div class="page">
 		<nav id="colorlib-main-nav" role="navigation">
-			<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
+			<a href="<%=request.getContextPath()%>/#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
 			<div class="js-fullheight colorlib-table">
 				<!--<div class="img" style="background-image: url(images/image_4.jpg);"></div>-->
 				<div class="colorlib-table-cell js-fullheight">
 					<div class="row no-gutters">
 						<div class="col-md-12 text-center">
-							<h1 class="mb-4 page-logo">
-								<class="logo">카테고리<br>
-								<span>
+							<h1 class="mb-4 page-logo logo">
+								카테고리<br> <span>
 									<hr color="white">
-								</span> </a>
+								</span>
 							</h1>
 							<ul>
-								<li><a href="javascript:;"><span>로맨틱코미디</span></a></li>
-								<li><a href="javascript:;"><span>코미디</span></a></li>
-								<li><a href="javascript:;"><span>어린이/가족</span></a></li>
-								<li><a href="javascript:;"><span>음악/뮤지컬</span></a></li>
-								<li><a href="javascript:;"><span>드라마</span></a></li>
-								<li><a href="javascript:;"><span>로맨스</span></a></li>
-								<li><a href="javascript:;"><span>판타지</span></a></li>
-								<li><a href="javascript:;"><span>액션</span></a></li>
-								<li><a href="javascript:;"><span>SF</span></a></li>
-								<li><a href="javascript:;"><span>스릴러</span></a></li>
-								<li><a href="javascript:;"><span>공포</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>로맨틱코미디</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>코미디</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>어린이/가족</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>음악/뮤지컬</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>드라마</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>로맨스</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>판타지</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>액션</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>SF</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>스릴러</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>공포</span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -77,7 +76,7 @@
 			<header>
 				<div class="container">
 					<div class="colorlib-navbar-brand">
-						<a class="colorlib-logo" href="javascript:;">Movie<br> <span></span></a>
+						<a class="colorlib-logo" href="<%=request.getContextPath()%>/javascript:;">Movie<br> <span></span></a>
 					</div>
 					<nav class="nav-main">
 						<div class="collapse navbar-collapse"
@@ -85,37 +84,27 @@
 						<ul class="navbar-nav-main ml-auto">
 							<div class="nav-item-txt-div">
 								<li class="nav-item nav-item-txt active"><a
-									class="nav-link" href="javascript:;">홈 <span
+									class="nav-link" href="<%=request.getContextPath()%>/javascript:;">홈 <span
 										class="sr-only">(current)</span></a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="MainServlet?command=Movie_Category">영화 </a></li>
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Category">영화 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="MainServlet?command=Movie_MyContents">찜한콘텐츠 </a></li>
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_MyContents">찜한콘텐츠 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="blog.html">고객문의 </a></li>
-
-								<c:if test="${empty sessionScope.sessionId }">
-									<li class="nav-item nav-item-txt"><a class="nav-link"
-										href="MainServlet?command=Movie_Identification">로그인&ensp;&ensp;</a>
-									</li>
-								</c:if>
-								<c:if test="${not empty sessionScope.sessionId }">
-									<li class="nav-item nav-item-txt"><a class="nav-link"
-										href="MainServlet?command=Movie_Logout">로그아웃&ensp;&ensp;</a></li>
-								</c:if>
-								<!-- <li class="nav-item nav-item-txt"><a class="nav-link"
-									href="MainServlet?command=Movie_Identification">마이페이지&ensp;&ensp;</a>
-								</li> -->
+									href="<%=request.getContextPath()%>/blog.html">고객문의 </a></li>
+								<li class="nav-item nav-item-txt"><a class="nav-link"
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Identification">마이페이지&ensp;&ensp;</a>
+								</li>
 							</div>
 							<!-- Search Form -->
 							<div class="nav-item-img-div">
 								<li class="nav-item-img1">
 									<!-- Search btn -->
 									<div id="searchbtn">
-										<img id="searchimg" src="images/search.png" alt="">
+										<img id="searchimg" src="<%=request.getContextPath()%>/images/search.png" alt="">
 									</div>
 								</li>
-								<li class="nav-item-img2"><a href="#"
+								<li class="nav-item-img2"><a href="<%=request.getContextPath()%>/#"
 									class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a></li>
 							</div>
 						</ul>
@@ -150,10 +139,10 @@
 								친구들의</br> 디즈니월드 보다 신나는 무지개 어드벤처!
 							</h3>
 							<div>
-								<a href="#" class="btn btn-primary py-3 px-4 main-btn">▶ 재생</a>
+								<a href="<%=request.getContextPath()%>/#" class="btn btn-primary py-3 px-4 main-btn">▶ 재생</a>
 							</div>
 							<div>
-								<a href="#" class="btn btn-primary py-3 px-4 main-btn">╋ 찜한
+								<a href="<%=request.getContextPath()%>/#" class="btn btn-primary py-3 px-4 main-btn">╋ 찜한
 									콘텐츠</a>
 							</div>
 						</div>
@@ -168,7 +157,7 @@
 				<div class="row">
 					<div class="col-md-6 col-lg-3">
 						<div class="model-entry">
-							<a href="MainServlet?command=Movie_View&num=1"> <span
+							<a href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=1"> <span
 								class="model-img"
 								style="background-image: url(images/movie_image_1.jpg);">
 							</span>
@@ -178,7 +167,7 @@
 
 					<div class="col-md-6 col-lg-3">
 						<div class="model-entry">
-							<a href="MainServlet?command=Movie_View&num=1"> <span
+							<a href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=1"> <span
 								class="model-img"
 								style="background-image: url(images/movie_image_2.jpg);">
 							</span>
@@ -188,7 +177,7 @@
 
 					<div class="col-md-6 col-lg-3">
 						<div class="model-entry">
-							<a href="MainServlet?command=Movie_View&num=1"> <span
+							<a href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=1"> <span
 								class="model-img"
 								style="background-image: url(images/movie_image_3.jpg);">
 							</span>
@@ -198,7 +187,7 @@
 
 					<div class="col-md-6 col-lg-3">
 						<div class="model-entry">
-							<a href="MainServlet?command=Movie_View&num=1"> <span
+							<a href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=1"> <span
 								class="model-img"
 								style="background-image: url(images/movie_image_4.jpg);">
 							</span>
@@ -213,13 +202,14 @@
 		<section class="ftco-section ftco-no-pt ftco-no-pb">
 			<div class="container-fluid px-4">
 				<div class="row d-flex">
-					<c:forEach var="list_Hits" items="${list_Hits }" varStatus="vs"	begin="0" end="3">
+					<c:forEach var="list_Hits" items="${list_Hits }" varStatus="vs"
+						begin="0" end="3">
 						<div class="col-md-6 col-lg-3 ftco-animate">
 							<div class="ranking">
 								<h7> <c:out value="${vs.count }" /></h7>
 							</div>
 							<div class="model-entry">
-								<a href="MainServlet?command=Movie_View&${list_Hits.no}"> <span
+								<a href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=${list_Hits.no}"> <span
 									class="model-img"
 									style="background-image: url(${list_Hits.img_1});"> </span>
 								</a>
@@ -229,22 +219,23 @@
 
 					<div class="view-more">
 						<p>
-							<a href="model.html" class="btn btn-white py-6 px-6">콘텐츠 더보기</a>
+							<a href="<%=request.getContextPath()%>/model.html" class="btn btn-white py-6 px-6">콘텐츠 더보기</a>
 						</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		 
+		<c:if test="${list_Mine ne null }">
 		<div class="txt-content">내가 찜한 콘텐츠</div>
 		<section class="ftco-section ftco-no-pt ftco-no-pb">
 			<div class="container-fluid px-4">
 				<div class="row d-flex">
-					<c:forEach var="list_Mine" items="${list_Mine }" varStatus="vs" begin="0" end="3">
+					<c:forEach var="list_Mine" items="${list_Mine }" varStatus="vs"
+						begin="0" end="3">
 						<div class="col-md-6 col-lg-3 ftco-animate">
 							<div class="model-entry">
-								<a href="MainServlet?command=Movie_View&${list_Mine.no}"> <span
+								<a href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=${list_Mine.no}"> <span
 									class="model-img"
 									style="background-image: url(${list_Mine.img_1});"> </span>
 								</a>
@@ -253,12 +244,13 @@
 					</c:forEach>
 					<div class="view-more">
 						<p>
-							<a href="model.html" class="btn btn-white py-6 px-6">콘텐츠 더보기</a>
+							<a href="<%=request.getContextPath()%>/model.html" class="btn btn-white py-6 px-6">콘텐츠 더보기</a>
 						</p>
 					</div>
 				</div>
 			</div>
 		</section>
+		</c:if>
 
 		<div class="txt-content">새로 올라온 영화</div>
 		<section class="ftco-section ftco-no-pt ftco-no-pb">
@@ -268,7 +260,7 @@
 						begin="0" end="3">
 						<div class="col-md-6 col-lg-3 ftco-animate">
 							<div class="model-entry">
-								<a href="MainServlet?command=Movie_View&${list_Recent.no }">
+								<a href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=${list_Recent.no }">
 									<span class="model-img"
 									style="background-image: url(${list_Recent.img_1 });"></span>
 								</a>
@@ -278,7 +270,7 @@
 
 					<div class="view-more">
 						<p>
-							<a href="model.html" class="btn btn-white py-6 px-6">콘텐츠 더보기</a>
+							<a href="<%=request.getContextPath()%>/model.html" class="btn btn-white py-6 px-6">콘텐츠 더보기</a>
 						</p>
 					</div>
 				</div>
@@ -300,28 +292,28 @@
 				<div class="row d-flex">
 					<div class="col-md-4 d-flex ftco-animate">
 						<div class="blog-entry bg-dark align-self-stretch">
-							<a href="blog-single.html" class="block-20"
+							<a href="<%=request.getContextPath()%>/blog-single.html" class="block-20"
 								style="background-image: url('images/image_1.jpg');"> </a>
 							<div class="text p-4 d-block">
 								<div class="meta mb-3">
 									<div>
-										<a href="#">May 17, 2019</a>
+										<a href="<%=request.getContextPath()%>/#">May 17, 2019</a>
 									</div>
 									<div>
-										<a href="#">Admin</a>
+										<a href="<%=request.getContextPath()%>/#">Admin</a>
 									</div>
 									<div>
-										<a href="#" class="meta-chat"><span class="icon-chat"></span>
+										<a href="<%=request.getContextPath()%>/#" class="meta-chat"><span class="icon-chat"></span>
 											3</a>
 									</div>
 								</div>
 								<h3 class="heading mt-3">
-									<a href="#">Asia's Next Top Model</a>
+									<a href="<%=request.getContextPath()%>/#">Asia's Next Top Model</a>
 								</h3>
 								<p>Far far away, behind the word mountains, far from the
 									countries Vokalia</p>
 								<p>
-									<a href="#" class="btn btn-primary">Read more</a>
+									<a href="<%=request.getContextPath()%>/#" class="btn btn-primary">Read more</a>
 								</p>
 							</div>
 						</div>
@@ -329,56 +321,56 @@
 
 					<div class="col-md-4 d-flex ftco-animate">
 						<div class="blog-entry bg-dark align-self-stretch">
-							<a href="blog-single.html" class="block-20"
+							<a href="<%=request.getContextPath()%>/blog-single.html" class="block-20"
 								style="background-image: url('images/image_2.jpg');"> </a>
 							<div class="text p-4 d-block">
 								<div class="meta mb-3">
 									<div>
-										<a href="#">May 17, 2019</a>
+										<a href="<%=request.getContextPath()%>/#">May 17, 2019</a>
 									</div>
 									<div>
-										<a href="#">Admin</a>
+										<a href="<%=request.getContextPath()%>/#">Admin</a>
 									</div>
 									<div>
-										<a href="#" class="meta-chat"><span class="icon-chat"></span>
+										<a href="<%=request.getContextPath()%>/#" class="meta-chat"><span class="icon-chat"></span>
 											3</a>
 									</div>
 								</div>
 								<h3 class="heading mt-3">
-									<a href="#">Asia's Next Top Model</a>
+									<a href="<%=request.getContextPath()%>/#">Asia's Next Top Model</a>
 								</h3>
 								<p>Far far away, behind the word mountains, far from the
 									countries Vokalia</p>
 								<p>
-									<a href="#" class="btn btn-primary">Read more</a>
+									<a href="<%=request.getContextPath()%>/#" class="btn btn-primary">Read more</a>
 								</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4 d-flex ftco-animate">
 						<div class="blog-entry bg-dark align-self-stretch">
-							<a href="blog-single.html" class="block-20"
+							<a href="<%=request.getContextPath()%>/blog-single.html" class="block-20"
 								style="background-image: url('images/image_3.jpg');"> </a>
 							<div class="text p-4 d-block">
 								<div class="meta mb-3">
 									<div>
-										<a href="#">May 17, 2019</a>
+										<a href="<%=request.getContextPath()%>/#">May 17, 2019</a>
 									</div>
 									<div>
-										<a href="#">Admin</a>
+										<a href="<%=request.getContextPath()%>/#">Admin</a>
 									</div>
 									<div>
-										<a href="#" class="meta-chat"><span class="icon-chat"></span>
+										<a href="<%=request.getContextPath()%>/#" class="meta-chat"><span class="icon-chat"></span>
 											3</a>
 									</div>
 								</div>
 								<h3 class="heading mt-3">
-									<a href="#">Asia's Next Top Model</a>
+									<a href="<%=request.getContextPath()%>/#">Asia's Next Top Model</a>
 								</h3>
 								<p>Far far away, behind the word mountains, far from the
 									countries Vokalia</p>
 								<p>
-									<a href="#" class="btn btn-primary">Read more</a>
+									<a href="<%=request.getContextPath()%>/#" class="btn btn-primary">Read more</a>
 								</p>
 							</div>
 						</div>
@@ -486,17 +478,17 @@
 				<div class="ftco-footer-widget">
 					<!--<h2 class="ftco-heading-2">Site Links</h2>-->
 					<ul class="list-unstyled">
-						<li><a href="#" class="py-2 d-block">Home</a></li>
+						<li><a href="<%=request.getContextPath()%>/#" class="py-2 d-block">Home</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="javascript:;" class="py-2 d-block">Category</a></li>
+						<li><a href="<%=request.getContextPath()%>/javascript:;" class="py-2 d-block">Category</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="javascript:;" class="py-2 d-block">My
+						<li><a href="<%=request.getContextPath()%>/javascript:;" class="py-2 d-block">My
 								Contents</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="javascript:;" class="py-2 d-block">Customer
+						<li><a href="<%=request.getContextPath()%>/javascript:;" class="py-2 d-block">Customer
 								Service Center</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="javascript:;" class="py-2 d-block">My Page</a></li>
+						<li><a href="<%=request.getContextPath()%>/javascript:;" class="py-2 d-block">My Page</a></li>
 						<br>
 					</ul>
 				</div>
@@ -511,7 +503,7 @@
 							document.write(new Date().getFullYear());
 						</script>
 						All rights reserved | This template is made with by <a
-							href="javascript:;" target="_blank">Colorlib</a>
+							href="<%=request.getContextPath()%>/javascript:;" target="_blank">Colorlib</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>
@@ -582,25 +574,25 @@
 	</div>
 
 	<!--script-->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/scrollax.min.js"></script>
-	<script src="js/jquery.mb.YTPlayer.min.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
-	<script src="js/jquery.timepicker.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/popper.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/jquery.easing.1.3.js"></script>
+	<script src="<%=request.getContextPath()%>/js/jquery.waypoints.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/jquery.stellar.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/owl.carousel.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/jquery.magnific-popup.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/aos.js"></script>
+	<script src="<%=request.getContextPath()%>/js/jquery.animateNumber.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/scrollax.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/jquery.mb.YTPlayer.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/bootstrap-datepicker.js"></script>
+	<script src="<%=request.getContextPath()%>/js/jquery.timepicker.min.js"></script>
 	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-	<script src="js/google-map.js"></script>
-	<script src="js/main.js"></script>
+		src="<%=request.getContextPath()%>/https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="<%=request.getContextPath()%>/js/google-map.js"></script>
+	<script src="<%=request.getContextPath()%>/js/main.js"></script>
 
 </body>
 
