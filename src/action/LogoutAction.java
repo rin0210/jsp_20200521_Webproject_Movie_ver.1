@@ -15,6 +15,7 @@ public class LogoutAction implements Action {
 		// 세션에 저장된 객체를 제거
 		session.removeAttribute("sessionId");
 		session.removeAttribute("sessionName");
+		session.removeAttribute("sessionImg");
 		
 		// 세션 무효화
 		session.invalidate();

@@ -2087,6 +2087,19 @@ textarea.form-control {
   .btn.disabled, .btn:disabled {
     opacity: 0.65; }
 
+.btn-star{
+  font-size: 13px !important;
+  margin-left: 6.5em;
+  margin-top: -0.5em;
+  border: 0 !important;
+  outline: 0 !important;
+  background-color: transparent !important;
+}
+
+.btn-star:hover{
+  color: rebeccapurple !important;
+}
+
 a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none; }
@@ -6801,10 +6814,6 @@ button.bg-dark:focus {
 .pl-3,
 .px-3 {
   padding-left: 1rem !important; }
-  
-.py-33{
-  padding-bottom: 0.5em !important;
-}  
 
 .p-4 {
   padding: 1.5rem !important; }
@@ -6825,9 +6834,24 @@ button.bg-dark:focus {
 .px-4 {
   padding-left: 1.5rem !important; }
 
+.px-4-star{
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+
+.py-3-star{
+  padding-top: 0.5rem !important; 
+  padding-bottom: 0.5rem !important;
+}
+  
+
 .px-4-category{
   padding-top: 1em;
 }  
+
+.py-33{
+  padding-bottom: 0.5em !important;
+}
 
 .p-5 {
   padding: 3rem !important; }
@@ -8720,14 +8744,15 @@ header {
   .btn-page  {
     margin-right: 1em;
   }
-   .logout-div .btn {
+  .logout-div .btn{
     border-radius: 5px !important;
     font-size: 14px;
-}
-	.logout-div{
+  }
+  .logout-div{
     margin-left: 1em;
     margin-bottom: -2em;
   }
+  
     .btn.btn-primary:hover {
       border: 1px solid black;
       background: black;
@@ -10629,5 +10654,7 @@ input[type="file"] {
   font-size: 14px;
   padding: 13px;
 }
+
+
 
 }

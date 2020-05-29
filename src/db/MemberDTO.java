@@ -8,6 +8,61 @@ public class MemberDTO {
 	private int lev;
 	private String img;
 
+	private int commentno;
+	private int movieno;
+	private int no;
+	private int pno;
+	private String love;
+	private String hate;
+
+	public int getCommentno() {
+		return commentno;
+	}
+
+	public void setCommentno(int commentno) {
+		this.commentno = commentno;
+	}
+
+	public int getMovieno() {
+		return movieno;
+	}
+
+	public void setMovieno(int movieno) {
+		this.movieno = movieno;
+	}
+
+	public int getNo() {
+		return no;
+	}
+
+	public void setNo(int no) {
+		this.no = no;
+	}
+
+	public int getPno() {
+		return pno;
+	}
+
+	public void setPno(int pno) {
+		this.pno = pno;
+	}
+
+	public String getLove() {
+		return love;
+	}
+
+	public void setLove(String love) {
+		this.love = love;
+	}
+
+	public String getHate() {
+		return hate;
+	}
+
+	public void setHate(String hate) {
+		this.hate = hate;
+	}
+
 	public String getImg() {
 		return img;
 	}

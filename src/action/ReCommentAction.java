@@ -17,7 +17,6 @@ public class ReCommentAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String content = request.getParameter("content");
 		String num = request.getParameter("num");
-		String name = request.getParameter("name");
 		String grp = request.getParameter("grp");
 		String seq = request.getParameter("seq");
 		String lvl = request.getParameter("lvl");
@@ -26,6 +25,8 @@ public class ReCommentAction implements Action {
 		
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("sessionId"); 
+		String name = (String) session.getAttribute("sessionName");
+		String img = (String) session.getAttribute("sessionImg");
 
 		int commentSeq = Integer.valueOf(seq);
 		int commentLvl = Integer.valueOf(lvl);
@@ -57,6 +58,7 @@ public class ReCommentAction implements Action {
 		 cdto.setId(id);
 		 cdto.setName(name);
 		 cdto.setContent(content);
+		 cdto.setImg(img);
 		 cdto.setGrp(Integer.valueOf(grp));
 		 cdto.setSeq(commentSeq);
 		 cdto.setLvl(commentLvl+1);

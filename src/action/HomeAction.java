@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import db.BookmarkDAO;
 import db.BookmarkDTO;
+import db.CommentDAO;
+import db.CommentDTO;
 import db.MovieDAO;
 import db.MovieDTO;
 
@@ -22,31 +24,34 @@ public class HomeAction implements Action {
 
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("sessionId");
+		String img = (String) session.getAttribute("sessionImg");
 		System.out.println("세션아이디: " + id);
+		System.out.println("세션이미지: " + img);
 
 		MovieDAO mdao = MovieDAO.getInstance();
 		BookmarkDAO bdao = BookmarkDAO.getInstance();
+		CommentDAO cdao = CommentDAO.getInstance();
 
 		// 최신순
 		ArrayList<MovieDTO> array_Recent = mdao.getAll_Recent();
-		if (array_Recent != null) {
-			request.setAttribute("list_Recent", array_Recent);
-		}
+		request.setAttribute("list_Recent", array_Recent);
 
 		// 조회순
 		ArrayList<MovieDTO> array_Hits = mdao.getAll_Hits();
-		if (array_Hits != null) {
-			request.setAttribute("list_Hits", array_Hits);
-		}
+		request.setAttribute("list_Hits", array_Hits);
 
 		// 찜
 		if (id != null) {
 			ArrayList<BookmarkDTO> array_Mine = bdao.getAll_MyContents(id);
 			System.out.println("찜목록 가져왔니:" + array_Mine.size());
-			if (array_Mine != null) {
-				request.setAttribute("list_Mine", array_Mine);
-			}
+			request.setAttribute("list_Mine", array_Mine);
 		}
+
+		// 최신 리뷰
+		ArrayList<CommentDTO> array_Review = cdao.selectRecentReview();
+		System.out.println("최신리뷰 목록:" + array_Review.size());
+
+		request.setAttribute("list_Review", array_Review);
 
 		String view = "/jsp/home.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);

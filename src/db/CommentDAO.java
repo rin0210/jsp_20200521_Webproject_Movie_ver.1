@@ -27,8 +27,9 @@ public class CommentDAO {
 	// 댓글 등록
 	public void insertComment(CommentDTO cdto) {
 		String sql_1 = "select commentmemo_no.nextval from dual";
-		String sql_2 = "insert into commentmemo(" + "commentno, movieno, id, name, content, writedate, grp, seq, lvl) "
-				+ "values(?, ?, ?, ?, ?, sysdate, ?, ?, ?)";
+		String sql_2 = "insert into commentmemo("
+				+ "commentno, movieno, id, name, content, img, writedate, grp, seq, lvl) "
+				+ "values(?, ?, ?, ?, ?, ?, sysdate, ?, ?, ?)";
 		int commentmemo_no = 0;
 		try {
 			conn = DBManager.getConnection();
@@ -43,9 +44,10 @@ public class CommentDAO {
 			pstmt.setString(3, cdto.getId());
 			pstmt.setString(4, cdto.getName());
 			pstmt.setString(5, cdto.getContent());
-			pstmt.setInt(6, commentmemo_no); // grp는 글번호와 같게 만듦
-			pstmt.setInt(7, 0); // 원글이기 때문에 seq와 lvl은 각각 0
-			pstmt.setInt(8, 0);
+			pstmt.setString(6, cdto.getImg());
+			pstmt.setInt(7, commentmemo_no); // grp는 글번호와 같게 만듦
+			pstmt.setInt(8, 0); // 원글이기 때문에 seq와 lvl은 각각 0
+			pstmt.setInt(9, 0);
 			pstmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -112,8 +114,9 @@ public class CommentDAO {
 	// 대댓글 등록
 	public void insertReComment(CommentDTO cdto) {
 		String sql_1 = "select commentmemo_no.nextval from dual";
-		String sql_2 = "insert into commentmemo(" + "commentno, movieno, id, name, content, writedate, grp, seq, lvl) "
-				+ "values(?, ?, ?, ?, ?, sysdate, ?, ?, ?)";
+		String sql_2 = "insert into commentmemo("
+				+ "commentno, movieno, id, name, content, img, writedate, grp, seq, lvl) "
+				+ "values(?, ?, ?, ?, ?, ?, sysdate, ?, ?, ?)";
 		try {
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
@@ -127,9 +130,10 @@ public class CommentDAO {
 			pstmt.setString(3, cdto.getId());
 			pstmt.setString(4, cdto.getName());
 			pstmt.setString(5, cdto.getContent());
-			pstmt.setInt(6, cdto.getGrp()); // grp는 글번호와 같게 만듦
-			pstmt.setInt(7, cdto.getSeq()); // 원글이기 때문에 seq와 lvl은 각각 0
-			pstmt.setInt(8, cdto.getLvl());
+			pstmt.setString(6, cdto.getImg());
+			pstmt.setInt(7, cdto.getGrp()); // grp는 글번호와 같게 만듦
+			pstmt.setInt(8, cdto.getSeq()); // 원글이기 때문에 seq와 lvl은 각각 0
+			pstmt.setInt(9, cdto.getLvl());
 			pstmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -218,4 +222,43 @@ public class CommentDAO {
 		return commentList;
 	}
 
+	// 최신 리뷰 가져오기
+	public ArrayList<CommentDTO> selectRecentReview() {
+		ArrayList<CommentDTO> reviewList = new ArrayList<CommentDTO>();
+		CommentDTO cdto = null;
+		try {
+			conn = DBManager.getConnection();
+			stmt = conn.createStatement();
+			String sql = "select * from recentreview order by writedate desc";
+			rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+			cdto = new CommentDTO();
+			cdto.setNo(rs.getString("no"));
+			cdto.setImg_1(rs.getString("img_1"));
+			cdto.setCommentno(rs.getInt("commentno"));
+			cdto.setMovieno(rs.getInt("movieno"));
+			cdto.setId(rs.getString("id"));
+			cdto.setName(rs.getString("name"));
+			cdto.setContent(rs.getString("content"));
+			cdto.setWritedate(rs.getString("writedate"));
+			reviewList.add(cdto);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return reviewList;
+	}
 }

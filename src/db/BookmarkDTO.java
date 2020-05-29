@@ -3,6 +3,7 @@ package db;
 public class BookmarkDTO {
 	private String id;
 	private int no;
+	
 	private String img_1;
 
 	public String getImg_1() {

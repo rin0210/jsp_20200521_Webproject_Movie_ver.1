@@ -20,12 +20,14 @@ public class CommentWriteAction implements Action {
 		
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("sessionId");
+		String img = (String)session.getAttribute("sessionImg");
 		
 		CommentDTO cdto = new CommentDTO();
 		cdto.setMovieno(Integer.valueOf(num));
 		cdto.setId(id);
 		cdto.setName(name);
 		cdto.setContent(content);
+		cdto.setImg(img);
 		
 		CommentDAO cdao = CommentDAO.getInstance();
 		cdao.insertComment(cdto);

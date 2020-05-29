@@ -16,14 +16,23 @@ function idCheck() {
 		joinForm.id.focus();
 		return;
 	}
+	
+	function getContextPath() {
+		var hostIndex = location.href.indexOf(location.host)
+				+ location.host.length;
+		return location.href.substring(hostIndex, location.href.indexOf('/',
+				hostIndex + 1));
+	};
 
-	var url ="MainServlet?command=Movie_IdCheck&id="
+	location.href = getContextPath() + "/MainServlet?command=Movie_IdCheck&id="
 			+ document.joinForm.id.value;
-	alert(url);
+	
+	// var url ="MainServlet?command=Movie_IdCheck&id="
+	// + document.joinForm.id.value;
 
-	window
-			.open(url, "_blank_1",
-					"toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=500,height=150");
+	// window
+	// .open(url, "_blank_1",
+	// "toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=500,height=150");
 }
 
 function chkString(type, nowString) {
@@ -93,12 +102,12 @@ function stringchk(nowString, chk) {
 	}
 }
 
-// 아이디 확인
-function idOk() {
-	opener.joinForm.id.value = document.idChkForm.id.value;
-	opener.joinForm.idChkOk.value = document.idChkForm.id.value;
-	self.close();
-}
+// // 아이디 확인
+// function idOk() {
+// opener.joinForm.id.value = document.idChkForm.id.value;
+// opener.joinForm.idChkOk.value = document.idChkForm.id.value;
+// self.close();
+// }
 
 // 회원가입 체크
 function joinCheck() {
@@ -129,7 +138,7 @@ function joinCheck() {
 		joinForm.pwd.focus();
 		return false;
 	}
-	
+
 	return true;
 }
 
@@ -160,11 +169,10 @@ function loginCheck() {
 	return true;
 }
 
-function profileUpdate(){
+function profileUpdate() {
 	var url = "MainServlet?command=Movie_ProfileUpdate_Form";
 
-window
-	.open(url, "_blank_1",
-			"toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=500,height=510");
+	window
+			.open(url, "_blank_1",
+					"toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=500,height=510");
 }
-

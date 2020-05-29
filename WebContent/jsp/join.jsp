@@ -17,27 +17,39 @@
 <link
 	href="<%=request.getContextPath()%>/https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
 	rel="stylesheet">
-<link href="<%=request.getContextPath()%>/https://fonts.googleapis.com/css?family=Vidaloka"
+<link
+	href="<%=request.getContextPath()%>/https://fonts.googleapis.com/css?family=Vidaloka"
 	rel="stylesheet">
 
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/open-iconic-bootstrap.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/animate.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/animate.css">
 
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/owl.carousel.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/owl.theme.default.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/magnific-popup.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/owl.carousel.min.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/owl.theme.default.min.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/magnific-popup.css">
 
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/aos.css">
 
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/ionicons.min.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/ionicons.min.css">
 
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap-datepicker.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/jquery.timepicker.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/bootstrap-datepicker.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/jquery.timepicker.css">
 
 
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/flaticon.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/icomoon.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/flaticon.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/icomoon.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/style.css">
 
 <style>
 * {
@@ -124,7 +136,6 @@ h22 {
 	margin-inline-end: 0px;
 	font-weight: bold;
 }
-
 
 a:link, a:visited {
 	text-decoration: none;
@@ -224,9 +235,11 @@ header {
 </head>
 
 <body>
+
 	<div class="page">
 		<nav id="colorlib-main-nav" role="navigation">
-			<a href="<%=request.getContextPath()%>/#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
+			<a href="<%=request.getContextPath()%>/#"
+				class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
 			<div class="js-fullheight colorlib-table">
 				<!--<div class="img" style="background-image: url(images/image_4.jpg);"></div>-->
 				<div class="colorlib-table-cell js-fullheight">
@@ -261,8 +274,9 @@ header {
 			<header>
 				<div class="container">
 					<div class="colorlib-navbar-brand">
-						<a class="colorlib-logo" href="<%=request.getContextPath()%>/MainServlet?command=Movie_Home">Movie<br>
-						<span></span></a>
+						<a class="colorlib-logo"
+							href="<%=request.getContextPath()%>/MainServlet?command=Movie_Home">Movie<br>
+							<span></span></a>
 					</div>
 					<nav class="nav-main">
 						<div class="collapse navbar-collapse"
@@ -270,12 +284,16 @@ header {
 						<ul class="navbar-nav-main ml-auto">
 							<div class="nav-item-txt-div">
 								<li class="nav-item nav-item-txt active"><a
-									class="nav-link" href="<%=request.getContextPath()%>/MainServlet?command=Movie_Home">홈 <span
-										class="sr-only">(current)</span></a></li>
+									class="nav-link"
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Home">홈
+										<span class="sr-only">(current)</span>
+								</a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Category">영화 </a></li>
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Category">영화
+								</a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="<%=request.getContextPath()%>/MainServlet?command=Movie_MyContents">찜한콘텐츠 </a></li>
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_MyContents">찜한콘텐츠
+								</a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
 									href="<%=request.getContextPath()%>/blog.html">고객문의 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
@@ -287,14 +305,16 @@ header {
 								<li class="nav-item-img1">
 									<!-- Search btn -->
 									<div id="searchbtn">
-										<img id="searchimg" src="<%=request.getContextPath()%>/images/search.png" alt="">
+										<img id="searchimg"
+											src="<%=request.getContextPath()%>/images/search.png" alt="">
 									</div>
 								</li>
-								<li class="nav-item-img2"><a href="<%=request.getContextPath()%>/#"
+								<li class="nav-item-img2"><a
+									href="<%=request.getContextPath()%>/#"
 									class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a></li>
 							</div>
 						</ul>
-				</nav>
+					</nav>
 				</div>
 				<div class="header-search-form ml-auto">
 					<form action="#">
@@ -304,7 +324,7 @@ header {
 							value="submit">
 					</form>
 				</div>
-		</header>
+			</header>
 		</div>
 
 		<!-- Page Content -->
@@ -321,7 +341,22 @@ header {
 								class="input-style01" maxlength="12" name="id"> <input
 								type="button" id="btn_idchk" onclick="idCheck()" class="idchk"
 								value="중복확인"> <input type="hidden" name="idChkOk"
-								value="no">
+								value="no"> 
+								
+								<c:if test="${result==3 }">
+									<script type="text/javascript">
+										alert("이미 사용 중인 아이디입니다.");
+										document.joinForm.id.value="${id}";
+									</script>
+								</c:if> 
+								<c:if test="${result==4 }">
+									<script type="text/javascript">
+										alert("사용 가능한 아이디입니다.");
+										document.joinForm.id.value="${id}";
+										document.joinForm.idChkOk.value="yes"
+									</script>
+								</c:if>
+								
 								<p id="noti_id" class="login-error-gray">&ensp;* 6~12자 영문,
 									숫자로 입력해주세요.</p></li>
 							<li><input type="password" placeholder="비밀번호를 입력하세요."
@@ -377,28 +412,32 @@ header {
 				</div>
 			</div>
 		</footer>
-		</div>
+	</div>
 
-		<script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
-		<script src="<%=request.getContextPath()%>/js/jquery-migrate-3.0.1.min.js"></script>
-		<script src="<%=request.getContextPath()%>/js/popper.min.js"></script>
-		<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
-		<script src="<%=request.getContextPath()%>/js/jquery.easing.1.3.js"></script>
-		<script src="<%=request.getContextPath()%>/js/jquery.waypoints.min.js"></script>
-		<script src="<%=request.getContextPath()%>/js/jquery.stellar.min.js"></script>
-		<script src="<%=request.getContextPath()%>/js/owl.carousel.min.js"></script>
-		<script src="<%=request.getContextPath()%>/js/jquery.magnific-popup.min.js"></script>
-		<script src="<%=request.getContextPath()%>/js/aos.js"></script>
-		<script src="<%=request.getContextPath()%>/js/jquery.animateNumber.min.js"></script>
-		<script src="<%=request.getContextPath()%>/js/scrollax.min.js"></script>
-		<script src="<%=request.getContextPath()%>/js/jquery.mb.YTPlayer.min.js"></script>
-		<script src="<%=request.getContextPath()%>/js/bootstrap-datepicker.js"></script>
-		<script src="<%=request.getContextPath()%>/js/jquery.timepicker.min.js"></script>
-		<script
-			src="<%=request.getContextPath()%>/https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-		<script src="<%=request.getContextPath()%>/js/google-map.js"></script>
-		<script src="<%=request.getContextPath()%>/js/main.js"></script>
-		<script src="<%=request.getContextPath()%>/js/script.js"></script>
+	<script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/popper.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/jquery.easing.1.3.js"></script>
+	<script src="<%=request.getContextPath()%>/js/jquery.waypoints.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/jquery.stellar.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/owl.carousel.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/js/jquery.magnific-popup.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/aos.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/js/jquery.animateNumber.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/scrollax.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/js/jquery.mb.YTPlayer.min.js"></script>
+	<script src="<%=request.getContextPath()%>/js/bootstrap-datepicker.js"></script>
+	<script src="<%=request.getContextPath()%>/js/jquery.timepicker.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="<%=request.getContextPath()%>/js/google-map.js"></script>
+	<script src="<%=request.getContextPath()%>/js/main.js"></script>
+	<script src="<%=request.getContextPath()%>/js/script.js"></script>
 </body>
 
 </html>

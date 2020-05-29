@@ -22,27 +22,23 @@
 		</script>
 	</c:if>
 
-	<c:if test="${result==3 }">
+	<!--<c:if test="${result==3 }">
 		<script type="text/javascript">
-			if (!alert("이미 사용 중인 아이디입니다.")) {
-				window.close();
-			}
+			alert("이미 사용 중인 아이디입니다.");
+			history.go(-1);
 		</script>
 	</c:if>
 
 	<c:if test="${result==4 }">
 		<script type="text/javascript">
-			if (!alert("사용 가능한 아이디입니다.")) {
-				opener.joinForm.idChkOk.value = "yes";
-				window.close();
-			}
+			alert("사용 가능한 아이디입니다.");
 		</script>
-	</c:if>
+	</c:if>-->
 
 	<c:if test="${result==5 }">
 		<script type="text/javascript">
 			alert("정상적으로 수정되었습니다.");
-			opener.location.reload();
+			opener.location.reload(); // 새로고침
 			window.close();
 		</script>
 	</c:if>

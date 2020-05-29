@@ -13,29 +13,137 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link
-	href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
+	href="<%=request.getContextPath()%>/https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
 	rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Vidaloka"
+<link
+	href="<%=request.getContextPath()%>/https://fonts.googleapis.com/css?family=Vidaloka"
 	rel="stylesheet">
 
-<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/animate.css">
 
-<link rel="stylesheet" href="css/owl.carousel.min.css">
-<link rel="stylesheet" href="css/owl.theme.default.min.css">
-<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/owl.carousel.min.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/owl.theme.default.min.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/magnific-popup.css">
 
-<link rel="stylesheet" href="css/aos.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/aos.css">
 
-<link rel="stylesheet" href="css/ionicons.min.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/ionicons.min.css">
 
-<link rel="stylesheet" href="css/bootstrap-datepicker.css">
-<link rel="stylesheet" href="css/jquery.timepicker.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/bootstrap-datepicker.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/jquery.timepicker.css">
 
 
-<link rel="stylesheet" href="css/flaticon.css">
-<link rel="stylesheet" href="css/icomoon.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/flaticon.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/icomoon.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/style.css">
+
+<style>
+.star-input>.input, .star-input>.input>label:hover, .star-input>.input>input:focus+label,
+	.star-input>.input>input:checked+label {
+	display: inline-block;
+	vertical-align: middle;
+	background: url('images/grade_img_1.png') no-repeat;
+}
+
+.star-input {
+	display: inline-block;
+	white-space: nowrap;
+	width: 225px;
+	height: 40px;
+	padding: 14px;
+	line-height: 30px;
+}
+
+.star-input>.input {
+	display: inline-block;
+	width: 150px;
+	background-size: 150px;
+	height: 28px;
+	white-space: nowrap;
+	overflow: hidden;
+	position: relative;
+}
+
+.star-input>.input>input {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+}
+
+star-input>.input.focus {
+	outline: 1px dotted #ddd;
+}
+
+.star-input>.input>label {
+	width: 30px;
+	height: 0;
+	padding: 28px 0 0 0;
+	overflow: hidden;
+	float: left;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.star-input>.input>label:hover, .star-input>.input>input:focus+label,
+	.star-input>.input>input:checked+label {
+	background-size: 150px;
+	background-position: 0 bottom;
+}
+
+.star-input>.input>label:hover ~label {
+	background-image: none;
+}
+
+.star-input>.input>label[for="p1"] {
+	width: 30px;
+	z-index: 5;
+}
+
+.star-input>.input>label[for="p2"] {
+	width: 60px;
+	z-index: 4;
+}
+
+.star-input>.input>label[for="p3"] {
+	width: 90px;
+	z-index: 3;
+}
+
+.star-input>.input>label[for="p4"] {
+	width: 120px;
+	z-index: 2;
+}
+
+.star-input>.input>label[for="p5"] {
+	width: 150px;
+	z-index: 1;
+}
+
+.star-input>output {
+	display: inline-block;
+	width: 60px;
+	margin-left: -1.5em;
+	margin-top: 12px;
+	font-size: 16px;
+	text-align: right;
+	vertical-align: middle;
+}
+</style>
 
 </head>
 
@@ -43,7 +151,8 @@
 	<!--카테고리 메뉴-->
 	<div class="page">
 		<nav id="colorlib-main-nav" role="navigation">
-			<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
+			<a href="<%=request.getContextPath()%>/#"
+				class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
 			<div class="js-fullheight colorlib-table">
 				<!--<div class="img" style="background-image: url(images/image_4.jpg);"></div>-->
 				<div class="colorlib-table-cell js-fullheight">
@@ -56,17 +165,17 @@
 								</span> </a>
 							</h1>
 							<ul>
-								<li><a href="javascript:;"><span>로맨틱코미디</span></a></li>
-								<li><a href="javascript:;"><span>코미디</span></a></li>
-								<li><a href="javascript:;"><span>어린이/가족</span></a></li>
-								<li><a href="javascript:;"><span>음악/뮤지컬</span></a></li>
-								<li><a href="javascript:;"><span>드라마</span></a></li>
-								<li><a href="javascript:;"><span>로맨스</span></a></li>
-								<li><a href="javascript:;"><span>판타지</span></a></li>
-								<li><a href="javascript:;"><span>액션</span></a></li>
-								<li><a href="javascript:;"><span>SF</span></a></li>
-								<li><a href="javascript:;"><span>스릴러</span></a></li>
-								<li><a href="javascript:;"><span>공포</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>로맨틱코미디</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>코미디</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>어린이/가족</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>음악/뮤지컬</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>드라마</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>로맨스</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>판타지</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>액션</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>SF</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>스릴러</span></a></li>
+								<li><a href="<%=request.getContextPath()%>/javascript:;"><span>공포</span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -79,7 +188,9 @@
 			<header class="header-mycontents">
 				<div class="container">
 					<div class="colorlib-navbar-brand">
-						<a class="colorlib-logo" href="MainServlet?command=Movie_Home">Movie<br> <span></span></a>
+						<a class="colorlib-logo"
+							href="<%=request.getContextPath()%>/MainServlet?command=Movie_Home">Movie<br>
+							<span></span></a>
 					</div>
 					<nav class="nav-main">
 						<div class="collapse navbar-collapse"
@@ -87,26 +198,32 @@
 						<ul class="navbar-nav-main ml-auto">
 							<div class="nav-item-txt-div">
 								<li class="nav-item nav-item-txt active"><a
-									class="nav-link" href="MainServlet?command=Movie_Home">홈 <span
-										class="sr-only">(current)</span></a></li>
+									class="nav-link"
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Home">홈
+										<span class="sr-only">(current)</span>
+								</a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="MainServlet?command=Movie_Category">영화 </a></li>
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Category">영화
+								</a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="MainServlet?command=Movie_MyContents">찜한콘텐츠 </a></li>
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_MyContents">찜한콘텐츠
+								</a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="blog.html">고객문의 </a></li>
+									href="<%=request.getContextPath()%>/blog.html">고객문의 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="MainServlet?command=Movie_Identification">마이페이지&ensp;&ensp;</a></li>
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Identification">마이페이지&ensp;&ensp;</a></li>
 							</div>
 							<!-- Search Form -->
 							<div class="nav-item-img-div">
 								<li class="nav-item-img1">
 									<!-- Search btn -->
 									<div id="searchbtn">
-										<img id="searchimg" src="images/search.png" alt="">
+										<img id="searchimg"
+											src="<%=request.getContextPath()%>/images/search.png" alt="">
 									</div>
 								</li>
-								<li class="nav-item-img2"><a href="#"
+								<li class="nav-item-img2"><a
+									href="<%=request.getContextPath()%>/#"
 									class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a></li>
 							</div>
 						</ul>
@@ -120,7 +237,7 @@
 							value="submit">
 					</form>
 				</div>
-		</header>
+			</header>
 		</div>
 
 		<!-- video -->
@@ -132,7 +249,8 @@
 						class="row align-items-center justify-content-center text-center">
 
 						<div class="col-md-7" data-aos="fade-up" data-aos-delay="400">
-							<a href="https://vimeo.com/channels/staffpicks/93951774"
+							<a
+								href="<%=request.getContextPath()%>/https://vimeo.com/channels/staffpicks/93951774"
 								class="play-single-big mb-4 d-inline-block popup-vimeo"><span
 								class="icon-play"></span></a>
 						</div>
@@ -154,22 +272,120 @@
 				<c:if test="${bookMarkChk==1 }">
 					<!-- 찜x -->
 					<div>
-						<a href="MainServlet?command=Movie_Bookmark&num=${mdto.no }"
+						<a
+							href="<%=request.getContextPath()%>/MainServlet?command=Movie_Bookmark&num=${mdto.no }"
 							class="btn btn-primary py-3 px-4 contents-view-btn">╋ 찜하기</a>
 					</div>
 				</c:if>
 				<c:if test="${bookMarkChk==2 }">
 					<!-- 찜x -->
 					<div>
-						<a href="MainServlet?command=Movie_Bookmark&num=${mdto.no }"
+						<a
+							href="<%=request.getContextPath()%>/MainServlet?command=Movie_Bookmark&num=${mdto.no }"
 							class="btn btn-primary py-3 px-4 contents-view-btn">▶ 찜한 콘텐츠</a>
 					</div>
 				</c:if>
 
-				<div>
-					<a href="javascript:;&num=${mdto.no }"
-						class="btn btn-primary py-3 px-4 contents-view-btn">평가</a>
-				</div>
+				<!-- 평가 -->
+				<c:if test="${not empty sessionScope.sessionId }">
+					<div>
+						<form action="MainServlet?command=Movie_Star" method="post"
+							name="star-form">
+
+							<span class="star-input"> <c:choose>
+									<c:when test="${sdto.star ==1}">
+										<span class="input"> <input type="radio"
+											name="star-input" value="1" id="p1" checked> <label
+											for="p1">1</label> <input type="radio" name="star-input"
+											value="2" id="p2"> <label for="p2">2</label> <input
+											type="radio" name="star-input" value="3" id="p3"> <label
+											for="p3">3</label> <input type="radio" name="star-input"
+											value="4" id="p4"> <label for="p4">4</label> <input
+											type="radio" name="star-input" value="5" id="p5"> <label
+											for="p5">5</label> <input type="hidden" name="movie_no"
+											value="${mdto.no }">
+										</span>
+									</c:when>
+									<c:when test="${sdto.star ==2}">
+										<span class="input"> <input type="radio"
+											name="star-input" value="1" id="p1"> <label for="p1">1</label>
+											<input type="radio" name="star-input" value="2" id="p2"
+											checked> <label for="p2">2</label> <input
+											type="radio" name="star-input" value="3" id="p3"> <label
+											for="p3">3</label> <input type="radio" name="star-input"
+											value="4" id="p4"> <label for="p4">4</label> <input
+											type="radio" name="star-input" value="5" id="p5"> <label
+											for="p5">5</label> <input type="hidden" name="movie_no"
+											value="${mdto.no }">
+										</span>
+									</c:when>
+									<c:when test="${sdto.star ==3}">
+										<span class="input"> <input type="radio"
+											name="star-input" value="1" id="p1"> <label for="p1">1</label>
+											<input type="radio" name="star-input" value="2" id="p2">
+											<label for="p2">2</label> <input type="radio"
+											name="star-input" value="3" id="p3" checked> <label
+											for="p3">3</label> <input type="radio" name="star-input"
+											value="4" id="p4"> <label for="p4">4</label> <input
+											type="radio" name="star-input" value="5" id="p5"> <label
+											for="p5">5</label> <input type="hidden" name="movie_no"
+											value="${mdto.no }">
+										</span>
+									</c:when>
+
+									<c:when test="${sdto.star ==4}">
+										<span class="input"> <input type="radio"
+											name="star-input" value="1" id="p1"> <label for="p1">1</label>
+											<input type="radio" name="star-input" value="2" id="p2">
+											<label for="p2">2</label> <input type="radio"
+											name="star-input" value="3" id="p3"> <label for="p3">3</label>
+											<input type="radio" name="star-input" value="4" id="p4"
+											checked> <label for="p4">4</label> <input
+											type="radio" name="star-input" value="5" id="p5"> <label
+											for="p5">5</label> <input type="hidden" name="movie_no"
+											value="${mdto.no }">
+										</span>
+									</c:when>
+									<c:when test="${sdto.star ==5}">
+										<span class="input"> <input type="radio"
+											name="star-input" value="1" id="p1"> <label for="p1">1</label>
+											<input type="radio" name="star-input" value="2" id="p2">
+											<label for="p2">2</label> <input type="radio"
+											name="star-input" value="3" id="p3"> <label for="p3">3</label>
+											<input type="radio" name="star-input" value="4" id="p4">
+											<label for="p4">4</label> <input type="radio"
+											name="star-input" value="5" id="p5" checked> <label
+											for="p5">5</label> <input type="hidden" name="movie_no"
+											value="${mdto.no }">
+										</span>
+									</c:when>
+									<c:otherwise>
+									<span class="input"> <input type="radio"
+											name="star-input" value="1" id="p1"> <label for="p1">1</label>
+											<input type="radio" name="star-input" value="2" id="p2">
+											<label for="p2">2</label> <input type="radio"
+											name="star-input" value="3" id="p3"> <label for="p3">3</label>
+											<input type="radio" name="star-input" value="4" id="p4">
+											<label for="p4">4</label> <input type="radio"
+											name="star-input" value="5" id="p5" > <label
+											for="p5">5</label> <input type="hidden" name="movie_no"
+											value="${mdto.no }">
+										</span>
+									</c:otherwise>
+								</c:choose> 
+								
+								<!-- <output for="star-input">
+									<b>0</b>점
+								</output>  -->
+								
+								<input type="submit"
+								class="btn btn-star btn-primary py-3-star px-4-star contents-view-btn"
+								value="평가하기">
+							</span>
+						</form>
+					</div>
+				</c:if>
+
 			</section>
 			<section class="contents-view-detail contents-view-detail-2">
 				<div
@@ -192,8 +408,10 @@
 						<c:if test="${commentList.lvl==0 }">
 							<li class="comment">
 								<div class="vcard bio">
-									<!-- <img src="${commentList.img }" alt="Image placeholder"> -->
-									<img src="images/person_1.jpg" alt="Image placeholder">
+									<!-- <img src="<%=request.getContextPath()%>/${commentList.img }" alt="Image placeholder"> -->
+									<img
+										src="<%=request.getContextPath()%>/images/profile_images/${commentList.img }"
+										alt="Image placeholder">
 								</div>
 								<div class="comment-body">
 									<h3>${commentList.name }</h3>
@@ -206,88 +424,37 @@
 											<input class="searchInput" type="text" name="content"
 												placeholder=""> <input type="hidden" name="num"
 												value="${commentList.movieno }"> <input
-												type="hidden" name="name" value="${commentList.name }">
-											<input type="hidden" name="grp" value="${commentList.grp }">
+												type="hidden" name="grp" value="${commentList.grp }">
 											<input type="hidden" name="seq" value="${commentList.seq }">
 											<input type="hidden" name="lvl" value="${commentList.lvl }">
 											<c:if test="${not empty sessionScope.sessionId }">
-											<p>
-												<input type="submit" class="reply" value="REPLY">
-											</p>
+												<p>
+													<input type="submit" class="reply" value="REPLY">
+												</p>
 											</c:if>
 										</div>
 									</form>
 								</div>
 						</c:if>
 						<c:if test="${commentList.lvl==1 }">
-								<ul class="children">
-									<li class="comment">
-										<div class="vcard bio">
-											<img src="images/person_1.jpg" alt="Image placeholder">
-										</div>
-										<div class="comment-body">
-											<h3>${commentList.name }</h3>
-											<div class="meta">${commentList.writedate }</div>
-											<p>${commentList.content }</p>
-										</div>
-									</li>
-								</ul>
-							</c:if>
+							<ul class="children">
+								<li class="comment">
+									<div class="vcard bio">
+										<img
+											src="<%=request.getContextPath()%>/images/profile_images/${commentList.img }"
+											alt="Image placeholder">
+									</div>
+									<div class="comment-body">
+										<h3>${commentList.name }</h3>
+										<div class="meta">${commentList.writedate }</div>
+										<p>${commentList.content }</p>
+									</div>
+								</li>
+							</ul>
+						</c:if>
 						</li>
 					</c:forEach>
 				</ul>
-
-				<!-- <li class="comment">
-            <div class="vcard bio">
-              <img src="images/person_1.jpg" alt="Image placeholder">
-            </div>
-            <div class="comment-body">
-              <h3>John Doe</h3>
-              <div class="meta">June 27, 2018 at 2:21pm</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-              <p><a href="#" class="reply">Reply</a></p>
-            </div>
-
-            <ul class="children">
-              <li class="comment">
-                <div class="vcard bio">
-                  <img src="images/person_1.jpg" alt="Image placeholder">
-                </div>
-                <div class="comment-body">
-                  <h3>John Doe</h3>
-                  <div class="meta">June 27, 2018 at 2:21pm</div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                  <p><a href="#" class="reply">Reply</a></p>
-                </div>
-
-
-                <ul class="children">
-                  <li class="comment">
-                    <div class="vcard bio">
-                      <img src="images/person_1.jpg" alt="Image placeholder">
-                    </div>
-                    <div class="comment-body">
-                      <h3>John Doe</h3>
-                      <div class="meta">June 27, 2018 at 2:21pm</div>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                      <p><a href="#" class="reply">Reply</a></p>
-                    </div>
-
-                      <ul class="children">
-                        <li class="comment">
-                          <div class="vcard bio">
-                            <img src="images/person_1.jpg" alt="Image placeholder">
-                          </div>
-                          <div class="comment-body">
-                            <h3>John Doe</h3>
-                            <div class="meta">June 27, 2018 at 2:21pm</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                            <p><a href="#" class="reply">Reply</a></p>
-                          </div>
-                        </li>
-                      </ul>
-                 
-					<!-- END comment-list -->
 
 				<!-- comment write -->
 				<c:if test="${not empty sessionScope.sessionId }">
@@ -334,17 +501,20 @@
 				<div class="ftco-footer-widget">
 					<!--<h2 class="ftco-heading-2">Site Links</h2>-->
 					<ul class="list-unstyled">
-						<li><a href="#" class="py-2 d-block">Home</a></li>
+						<li><a href="<%=request.getContextPath()%>/#"
+							class="py-2 d-block">Home</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="javascript:;" class="py-2 d-block">Category</a></li>
+						<li><a href="<%=request.getContextPath()%>/javascript:;"
+							class="py-2 d-block">Category</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="javascript:;" class="py-2 d-block">My
-								Contents</a></li>
+						<li><a href="<%=request.getContextPath()%>/javascript:;"
+							class="py-2 d-block">My Contents</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="javascript:;" class="py-2 d-block">Customer
-								Service Center</a></li>
+						<li><a href="<%=request.getContextPath()%>/javascript:;"
+							class="py-2 d-block">Customer Service Center</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="javascript:;" class="py-2 d-block">My Page</a></li>
+						<li><a href="<%=request.getContextPath()%>/javascript:;"
+							class="py-2 d-block">My Page</a></li>
 						<br>
 					</ul>
 				</div>
@@ -359,7 +529,7 @@
 							document.write(new Date().getFullYear());
 						</script>
 						All rights reserved | This template is made with by <a
-							href="javascript:;" target="_blank">Colorlib</a>
+							href="<%=request.getContextPath()%>/javascript:;" target="_blank">Colorlib</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>
@@ -370,25 +540,32 @@
 
 
 		<!--script-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery-migrate-3.0.1.min.js"></script>
-		<script src="js/popper.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery.easing.1.3.js"></script>
-		<script src="js/jquery.waypoints.min.js"></script>
-		<script src="js/jquery.stellar.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<script src="js/aos.js"></script>
-		<script src="js/jquery.animateNumber.min.js"></script>
-		<script src="js/scrollax.min.js"></script>
-		<script src="js/jquery.mb.YTPlayer.min.js"></script>
-		<script src="js/bootstrap-datepicker.js"></script>
-		<script src="js/jquery.timepicker.min.js"></script>
+		<script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
 		<script
-			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-		<script src="js/google-map.js"></script>
-		<script src="js/main.js"></script>
+			src="<%=request.getContextPath()%>/js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="<%=request.getContextPath()%>/js/popper.min.js"></script>
+		<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+		<script src="<%=request.getContextPath()%>/js/jquery.easing.1.3.js"></script>
+		<script src="<%=request.getContextPath()%>/js/jquery.waypoints.min.js"></script>
+		<script src="<%=request.getContextPath()%>/js/jquery.stellar.min.js"></script>
+		<script src="<%=request.getContextPath()%>/js/owl.carousel.min.js"></script>
+		<script
+			src="<%=request.getContextPath()%>/js/jquery.magnific-popup.min.js"></script>
+		<script src="<%=request.getContextPath()%>/js/aos.js"></script>
+		<script
+			src="<%=request.getContextPath()%>/js/jquery.animateNumber.min.js"></script>
+		<script src="<%=request.getContextPath()%>/js/scrollax.min.js"></script>
+		<script
+			src="<%=request.getContextPath()%>/js/jquery.mb.YTPlayer.min.js"></script>
+		<script src="<%=request.getContextPath()%>/js/bootstrap-datepicker.js"></script>
+		<script
+			src="<%=request.getContextPath()%>/js/jquery.timepicker.min.js"></script>
+		<script
+			src="<%=request.getContextPath()%>/https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+		<script src="<%=request.getContextPath()%>/js/google-map.js"></script>
+		<script src="<%=request.getContextPath()%>/js/main.js"></script>
+		<script src="<%=request.getContextPath()%>/js/jquery-1.11.3.min.js"></script>
+		<script src="<%=request.getContextPath()%>/js/star.js"></script>
 </body>
 
 </html>

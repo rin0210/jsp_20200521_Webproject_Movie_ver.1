@@ -153,17 +153,17 @@
 								<div class="col-md-6 ftco-animate">
 									<div class="carousel-model owl-carousel">
 										<div class="items">
-											<c:if test="${mdto.img eq null }">
+											<!--<c:if test="${mdto.img eq null }">
 												<img
 													src="<%=request.getContextPath()%>/images/profile_images/profile_1.jpg"
 													width="450px" height="450px" class="img-fluid-profile"
 													alt="Image">
-											</c:if>
-											<c:if test="${mdto.img ne null }">
+											</c:if>-->
+											<!--<c:if test="${mdto.img ne null }">-->
 												<img src="<%=request.getContextPath()%>/images/profile_images/${mdto.img }"
 													width="450px" height="450px" class="img-fluid-profile"
 													alt="Image">
-											</c:if>
+											<!--</c:if>-->
 										</div>
 									</div>
 								</div>

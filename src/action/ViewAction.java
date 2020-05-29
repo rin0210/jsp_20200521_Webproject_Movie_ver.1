@@ -15,6 +15,8 @@ import db.CommentDTO;
 import db.HitsDAO;
 import db.MovieDAO;
 import db.MovieDTO;
+import db.StarDAO;
+import db.StarDTO;
 
 public class ViewAction implements Action {
 
@@ -28,7 +30,7 @@ public class ViewAction implements Action {
 
 		MovieDAO mdao = MovieDAO.getInstance();
 		MovieDTO mdto = mdao.getOne(num);
-		
+
 		if (userId != null) {
 			// 조회 여부 체크
 			HitsDAO hdao = HitsDAO.getInstance();
@@ -44,23 +46,33 @@ public class ViewAction implements Action {
 			} else { // 찜o
 				request.setAttribute("bookMarkChk", 2);
 			}
+
+			// 평점 체크
+			StarDAO sdao = StarDAO.getInstance();
+			StarDTO sdto = sdao.getMyStar(userId, Integer.valueOf(num));
+
+//			if (sdto != null) {
+			request.setAttribute("sdto", sdto);
+//			} else {
+//				request.setAttribute("result", 0);
+//			}
 		}
-		
+
 		// 댓글 가져오기
 		CommentDAO cdao = CommentDAO.getInstance();
 		ArrayList<CommentDTO> commentList = cdao.selectCommentByNum(num);
 		int cnt = 0;
-		for(CommentDTO c : commentList) {
+		for (CommentDTO c : commentList) {
 			cnt++;
 		}
-		System.out.println("댓글 개수: "+cnt);
-		
+		System.out.println("댓글 개수: " + cnt);
+
 		String view = "jsp/view.jsp";
 		request.setAttribute("mdto", mdto);
 		request.setAttribute("commentList", commentList);
 		request.setAttribute("cnt", cnt);
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);
-		
+
 	}
 }

@@ -162,6 +162,7 @@ public class MovieDAO {
 
 	// 조회수 업데이트
 	public void updateHits(String num) {
+		System.out.println("조회수 올라가고 있니?");
 		String sql = "update movie set hits=hits+1 where no=?";
 		try {
 			conn = DBManager.getConnection();

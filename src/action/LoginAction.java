@@ -27,6 +27,7 @@ public class LoginAction implements Action {
 			HttpSession session = request.getSession(); // 세션 저장
 			session.setAttribute("sessionId", mdto.getId());
 			session.setAttribute("sessionName", mdto.getName());
+			session.setAttribute("sessionImg", mdto.getImg());
 			
 			new HomeAction().execute(request, response);
 			

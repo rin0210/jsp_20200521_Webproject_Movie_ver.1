@@ -26,7 +26,6 @@ public class ProfileUpdateAction implements Action {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-//		 String savePath = "./images/profile_images";
 		int uploadFileSizeLimit = 2 * 1024 * 1024; // 파일용량 제한 // 최대 업로드 파일 크기 5MB로 제한
 		String encType = "UTF-8";
 		String uploadFilePath = (String) request.getAttribute("uploadFilePath");

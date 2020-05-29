@@ -64,13 +64,14 @@ public class MemberDAO {
 	public void insert(MemberDTO mdto) {
 		try {
 			conn = DBManager.getConnection();
-			String sql = "insert into member values(?,?,?,?,?)";
+			String sql = "insert into member values(?,?,?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mdto.getName());
 			pstmt.setString(2, mdto.getId());
 			pstmt.setString(3, mdto.getPwd());
 			pstmt.setString(4, mdto.getTel());
 			pstmt.setInt(5, 1);
+			pstmt.setString(6, "profile_1.jpg");
 
 			pstmt.executeUpdate();
 
@@ -104,6 +105,7 @@ public class MemberDAO {
 				searDTO.setPwd(rs.getString("pwd"));
 				searDTO.setTel(rs.getString("tel"));
 				searDTO.setLev(rs.getInt("lev"));
+				searDTO.setImg(rs.getString("img"));
 			}
 
 		} catch (SQLException e) {
@@ -159,6 +161,45 @@ public class MemberDAO {
 		}
 		return searDTO;
 	}
+	
+	// 마이페이지 뷰 불러오기
+		public MemberDTO selMypage(String id) {
+			MemberDTO searDTO = null;
+			try {
+				conn = DBManager.getConnection();
+				stmt = conn.createStatement();
+				String sql = "select * from mypageview where id='" + id + "'";
+				rs = stmt.executeQuery(sql);
+				if (rs.next()) {
+					searDTO = new MemberDTO();
+					searDTO.setImg(rs.getString("img"));
+					searDTO.setName(rs.getString("name"));
+					searDTO.setLev(rs.getInt("lev"));
+					searDTO.setCommentno(rs.getInt("commentno"));
+					searDTO.setMovieno(rs.getInt("movieno"));
+					searDTO.setNo(rs.getInt("no"));
+					searDTO.setPno(rs.getInt("pno"));
+					searDTO.setLove(rs.getString("love"));
+					searDTO.setHate(rs.getString("hate"));
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+
+			} finally {
+				try {
+					if (rs != null)
+						rs.close();
+					if (stmt != null)
+						stmt.close();
+					if (conn != null)
+						conn.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			return searDTO;
+		}
 
 	// 이미지 파일 등록(수정)
 	public boolean updateProfile(String name, String img, String id) {

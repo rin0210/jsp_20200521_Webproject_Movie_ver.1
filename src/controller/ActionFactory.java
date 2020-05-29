@@ -12,7 +12,7 @@ import action.LoginAction;
 import action.LogoutAction;
 import action.MyContentsAction;
 import action.PaymentAction;
-import action.PreferAction;
+import action.StarAction;
 import action.ProfileUpdateAction;
 import action.ProfileUpdateFormAction;
 import action.ReCommentAction;
@@ -51,8 +51,8 @@ public class ActionFactory {
 			action = new ViewAction();
 		} else if (command.equals("Movie_Bookmark")) {
 			action = new BookmarkAction();
-		} else if (command.equals("Movie_Prefer")) {
-			action = new PreferAction();
+		} else if (command.equals("Movie_Star")) {
+			action = new StarAction();
 		} else if (command.equals("Movie_comment")) {
 			action = new CommentWriteAction();
 		} else if (command.equals("Movie_reComment")) {
