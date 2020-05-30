@@ -177,7 +177,7 @@ a:link, a:visited {
 }
 
 input[type="submit"] {
-	background: mediumslateblue;
+	background: rebeccapurple;
 	width: 390px;
 	margin: 40px 0px 25px 5px;
 	display: block;
@@ -320,7 +320,7 @@ header {
 									href="<%=request.getContextPath()%>/login.html">마이페이지&ensp;&ensp;</a></li>
 							</div>
 							<!-- Search Form -->
-							<div class="nav-item-img-div">
+						<div class="nav-item-img-div">
 								<li class="nav-item-img1">
 									<!-- Search btn -->
 									<div id="searchbtn">
@@ -329,14 +329,15 @@ header {
 									</div>
 								</li>
 								<li class="nav-item-img2"><a
-									href="<%=request.getContextPath()%>/#"
+									href="MainServlet?command=Movie_Search"
 									class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a></li>
 							</div>
 						</ul>
 					</nav>
 				</div>
 				<div class="header-search-form ml-auto">
-					<form action="#">
+					<form action="MainServlet?command=Movie_Search" method="post"
+						name="searchForm">
 						<input type="search" class="form-control form-control-search"
 							placeholder="Input your keyword then press enter..." id="search"
 							name="search"> <input class="d-none" type="submit"

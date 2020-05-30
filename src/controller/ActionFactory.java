@@ -3,6 +3,9 @@ package controller;
 import action.Action;
 import action.BookmarkAction;
 import action.CategoryAction;
+import action.CommentDelAction;
+import action.CommentModAction;
+import action.CommentModFormAction;
 import action.CommentWriteAction;
 import action.HomeAction;
 import action.IdCheckAction;
@@ -12,10 +15,11 @@ import action.LoginAction;
 import action.LogoutAction;
 import action.MyContentsAction;
 import action.PaymentAction;
-import action.StarAction;
 import action.ProfileUpdateAction;
 import action.ProfileUpdateFormAction;
 import action.ReCommentAction;
+import action.SearchAction;
+import action.StarAction;
 import action.ViewAction;
 
 public class ActionFactory {
@@ -39,7 +43,7 @@ public class ActionFactory {
 			action = new HomeAction();
 		} else if (command.equals("Movie_Identification")) {
 			action = new Identification();
-		}  else if (command.equals("Movie_IdCheck")) {
+		} else if (command.equals("Movie_IdCheck")) {
 			action = new IdCheckAction();
 		} else if (command.equals("Movie_Join")) {
 			action = new JoinAction();
@@ -67,8 +71,15 @@ public class ActionFactory {
 			action = new ProfileUpdateAction();
 		} else if (command.equals("Movie_Payment")) {
 			action = new PaymentAction();
+		} else if (command.equals("Movie_CommentMod")) {
+			action = new CommentModAction();
+		} else if (command.equals("Movie_CommentMod_Form")) {
+			action = new CommentModFormAction();
+		} else if (command.equals("Movie_CommentDel")) {
+			action = new CommentDelAction();
+		} else if (command.equals("Movie_Search")) {
+			action = new SearchAction();
 		}
-		
 		
 		return action;
 	}

@@ -93,7 +93,7 @@
 								<li class="nav-item nav-item-txt"><a class="nav-link"
 									href="<%=request.getContextPath()%>/MainServlet?command=Movie_MyContents">찜한콘텐츠 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="<%=request.getContextPath()%>/blog.html">고객문의 </a></li>
+									href="javascript;">고객문의 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
 									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Identification">마이페이지&ensp;&ensp;</a></li>
 							</div>
@@ -102,17 +102,20 @@
 								<li class="nav-item-img1">
 									<!-- Search btn -->
 									<div id="searchbtn">
-										<img id="searchimg" src="<%=request.getContextPath()%>/images/search.png" alt="">
+										<img id="searchimg"
+											src="<%=request.getContextPath()%>/images/search.png" alt="">
 									</div>
 								</li>
-								<li class="nav-item-img2"><a href="#"
+								<li class="nav-item-img2"><a
+									href="MainServlet?command=Movie_Search"
 									class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a></li>
 							</div>
 						</ul>
-				</nav>
+					</nav>
 				</div>
 				<div class="header-search-form ml-auto">
-					<form action="#">
+					<form action="MainServlet?command=Movie_Search" method="post"
+						name="searchForm">
 						<input type="search" class="form-control form-control-search"
 							placeholder="Input your keyword then press enter..." id="search"
 							name="search"> <input class="d-none" type="submit"
@@ -123,7 +126,7 @@
 		</div>
 
 		<section class="hero-wrap"
-			style="background-image: url(images/big_images/big_image_2.jpg);">
+			style="background-image: url(images/big_images/big_image_13.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row no-gutters text align-items-end "
@@ -137,10 +140,10 @@
 									거짓이 진실이 되는 순간, 믿으면 더 행복해진다!</br>'가위손' 팀 버튼 감독의 행복한 판타지
 								</h3>
 								<div>
-									<a href="#" class="btn btn-primary py-3 px-4 main-btn">▶ 재생</a>
+									<a href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=13" class="btn btn-primary py-3 px-4 main-btn">▶ 재생</a>
 								</div>
 								<div>
-									<a href="#" class="btn btn-primary py-3 px-4 main-btn">╋ 찜한
+									<a href="<%=request.getContextPath()%>/MainServlet?command=Movie_Bookmark&num=13" class="btn btn-primary py-3 px-4 main-btn">╋ 찜한
 										콘텐츠</a>
 								</div>
 							</div>
@@ -154,12 +157,12 @@
 			<div class="category_menu">
 				<div class="category-menu-movie">
 					<button class="active btn" type="button" data-filter="*">전체</button>
-					<button class="btn" type="button" data-filter=".portraits">로맨틱코미디</button>
-					<button class="btn" type="button" data-filter=".weddings">코미디</button>
-					<button class="btn" type="button" data-filter=".studio">어린이/가족</button>
-					<button class="btn" type="button" data-filter=".fashion">음악/뮤지컬</button>
-					<button class="btn" type="button" data-filter=".life">드라마</button>
-					<button class="btn" type="button" data-filter=".life">로맨스</button>
+					<button class="btn" type="button" data-filter=".로맨틱코미디">로맨틱코미디</button>
+					<button class="btn" type="button" data-filter=".코미디">코미디</button>
+					<button class="btn" type="button" data-filter=".어린이/가족">어린이/가족</button>
+					<button class="btn" type="button" data-filter=".음악/뮤지컬">음악/뮤지컬</button>
+					<button class="btn" type="button" data-filter=".드라마">드라마</button>
+					<button class="btn" type="button" data-filter=".로맨스">로맨스</button>
 					<button class="btn" type="button" data-filter=".life">판타지</button>
 					<button class="btn" type="button" data-filter=".life">액션</button>
 					<button class="btn" type="button" data-filter=".life">SF</button>
@@ -172,12 +175,12 @@
 		<section class="ftco-section-catogory ftco-no-pb">
 			<div class="container-fluid px-4-category">
 				<div class="row d-flex">
-					<c:forEach var="list_Hits" items="${list_Hits }" varStatus="vs">
+					<c:forEach var="list" items="${list }" varStatus="vs">
 						<div class="col-md-6 col-lg-3 ftco-animate">
 							<div class="model-entry">
-								<a href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=${list_Hits.no}"> <span
+								<a href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=${list.no}"> <span
 									class="model-img"
-									style="background-image: url(${list_Hits.img_1});"> </span>
+									style="background-image: url(${list.img_1});"> </span>
 								</a>
 							</div>
 						</div>
@@ -208,17 +211,17 @@
 				<div class="ftco-footer-widget">
 					<!--<h2 class="ftco-heading-2">Site Links</h2>-->
 					<ul class="list-unstyled">
-						<li><a href="<%=request.getContextPath()%>/#" class="py-2 d-block">Home</a></li>
+						<li><a href="javascript:;" class="py-2 d-block">Home</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="<%=request.getContextPath()%>/javascript:;" class="py-2 d-block">Category</a></li>
+						<li><a href="javascript:;" class="py-2 d-block">Category</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="<%=request.getContextPath()%>/javascript:;" class="py-2 d-block">My
+						<li><a href="javascript:;" class="py-2 d-block">My
 								Contents</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="<%=request.getContextPath()%>/javascript:;" class="py-2 d-block">Customer
+						<li><a href="javascript:;" class="py-2 d-block">Customer
 								Service Center</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="<%=request.getContextPath()%>/javascript:;" class="py-2 d-block">My Page</a></li>
+						<li><a href="javascript:;" class="py-2 d-block">My Page</a></li>
 						</br>
 					</ul>
 				</div>
@@ -233,7 +236,7 @@
 							document.write(new Date().getFullYear());
 						</script>
 						All rights reserved | This template is made with by <a
-							href="<%=request.getContextPath()%>/javascript:;" target="_blank">Colorlib</a>
+							href="javascript:;" target="_blank">Colorlib</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>

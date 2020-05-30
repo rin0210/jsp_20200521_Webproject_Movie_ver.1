@@ -253,9 +253,9 @@ header {
 								<li class="nav-item nav-item-txt"><a class="nav-link"
 									href="<%=request.getContextPath()%>/MainServlet?command=Movie_MyContents">찜한콘텐츠 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="<%=request.getContextPath()%>/blog.html">고객문의 </a></li>
+									href="javascript:;">고객문의 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="javascript:;">마이페이지&ensp;&ensp;</a></li>
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Identification">마이페이지&ensp;&ensp;</a></li>
 							</div>
 							<!-- Search Form -->
 							<div class="nav-item-img-div">
@@ -288,37 +288,24 @@ header {
 		<!-- Page Content -->
 		<div class="login-box">
 			<div class="login member-layout">
-				<h22>로그인</h22>
-				<div class="join-sns-box">
-					<form name="loginForm" action="MainServlet?command=Movie_Login"
-						method="post">
-						<ul class="input-wrap01">
-							<li><input type="text" placeholder="아이디" title="아이디"
-								class="input-style01" name="id"> <!----></li>
-							<li><input type="password" placeholder="비밀번호" title="비밀번호"
-								class="input-style01" name="pwd"> <!----> <!----></li>
-						</ul>
-						<!--<ul class="checkbox-wrap01">
-                <li class="check-style check-style-dark"><input type="checkbox" id="id-save"
-                        class="check-blue-dark"><label for="id-save">아이디 저장</label></li>
-                <li class="check-style check-style-dark"><input type="checkbox" id="login-auto"
-                        class="check-blue-dark"><label for="login-auto">자동 로그인</label></li>
-            </ul>-->
-						<div class="btn-purple btn-purple-dark">
-							<input type="submit" title="로그인" value="로그인"
-								onclick="return loginCheck()">
-						</div>
-					</form>
-					<div class="div_join-find">
-						<ul class="join-find">
-							<!--<li><a href="<%=request.getContextPath()%>/https://member.wavve.com/find/id">아이디 찾기</a></li>
-            <li><a href="<%=request.getContextPath()%>/https://member.wavve.com/find/password">비밀번호 재설정</a></li>-->
-
-							<li>&ensp;&nbsp;회원이 아니신가요?<a
-								href="<%=request.getContextPath()%>/jsp/join.jsp">지금 가입하세요.</a></li>
-						</ul>
-					</div>
-				</div>
+                <h3 class="mb-5-profile">코멘트 수정</h3>
+				<form action="<%=request.getContextPath()%>/MainServlet?command=Movie_CommentMod" method = "post" class="comment-form p-5">
+                    <div class="form-group profile">
+                      <label for="name">닉네임</label>
+                      <input type="text" class="form-control" id="name" name="name" value="${sessionScope.sessionName }">
+                      <input type="hidden" name="c_no" value=${c_no }>
+                      <input type="hidden" name="m_no" value=${m_no }>
+                    </div>
+                    
+                    <div class="form-group comment-mod">
+                      <label for="image">내용</label>
+                      <textarea name="cbody" class="comment-text-body" ></textarea>
+                    </div>
+                  
+                    <div class="btn-purple btn-purple-dark">
+                        <input type="submit" value="수정">
+                    </div>
+                  </form>
 			</div>
 		</div>
 	</div>
@@ -332,15 +319,15 @@ header {
 					<li><a href="<%=request.getContextPath()%>/MainServlet?command=Movie_home"
 						class="py-2 d-block">Home</a></li>
 					<li class="py-2-line d-block">|</li>
-					<li><a href="<%=request.getContextPath()%>/javascript:;" class="py-2 d-block">Category</a></li>
+					<li><a href="javascript:;" class="py-2 d-block">Category</a></li>
 					<li class="py-2-line d-block">|</li>
-					<li><a href="<%=request.getContextPath()%>/javascript:;" class="py-2 d-block">My
+					<li><a href="javascript:;" class="py-2 d-block">My
 							Contents</a></li>
 					<li class="py-2-line d-block">|</li>
-					<li><a href="<%=request.getContextPath()%>/javascript:;" class="py-2 d-block">Customer
+					<li><a href="javascript:;" class="py-2 d-block">Customer
 							Service Center</a></li>
 					<li class="py-2-line d-block">|</li>
-					<li><a href="<%=request.getContextPath()%>/javascript:;" class="py-2 d-block">My Page</a></li>
+					<li><a href="javascript:;" class="py-2 d-block">My Page</a></li>
 					<br>
 				</ul>
 			</div>
@@ -355,7 +342,7 @@ header {
 						document.write(new Date().getFullYear());
 					</script>
 					All rights reserved | This template is made with by <a
-						href="<%=request.getContextPath()%>/javascript:;" target="_blank">Colorlib</a>
+						href="javascript:;" target="_blank">Colorlib</a>
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 				</p>
 			</div>

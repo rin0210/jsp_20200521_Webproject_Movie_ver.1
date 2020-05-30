@@ -90,9 +90,7 @@
 			<header>
 				<div class="container">
 					<div class="colorlib-navbar-brand">
-						<a class="colorlib-logo"
-							href="<%=request.getContextPath()%>/javascript:;">Movie<br>
-							<span></span></a>
+						<a class="colorlib-logo" href="javascript:;">Movie<br> <span></span></a>
 					</div>
 					<nav class="nav-main">
 						<div class="collapse navbar-collapse"
@@ -100,8 +98,7 @@
 						<ul class="navbar-nav-main ml-auto">
 							<div class="nav-item-txt-div">
 								<li class="nav-item nav-item-txt active"><a
-									class="nav-link"
-									href="<%=request.getContextPath()%>/javascript:;">홈 <span
+									class="nav-link" href="javascript:;">홈 <span
 										class="sr-only">(current)</span></a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
 									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Category">영화
@@ -110,7 +107,7 @@
 									href="<%=request.getContextPath()%>/MainServlet?command=Movie_MyContents">찜한콘텐츠
 								</a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="<%=request.getContextPath()%>/blog.html">고객문의 </a></li>
+									href="javascrpt:;">고객문의 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
 									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Identification">마이페이지&ensp;&ensp;</a>
 								</li>
@@ -125,14 +122,15 @@
 									</div>
 								</li>
 								<li class="nav-item-img2"><a
-									href="<%=request.getContextPath()%>/#"
+									href="MainServlet?command=Movie_Search"
 									class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a></li>
 							</div>
 						</ul>
 					</nav>
 				</div>
 				<div class="header-search-form ml-auto">
-					<form action="#">
+					<form action="MainServlet?command=Movie_Search" method="post"
+						name="searchForm">
 						<input type="search" class="form-control form-control-search"
 							placeholder="Input your keyword then press enter..." id="search"
 							name="search"> <input class="d-none" type="submit"
@@ -144,7 +142,7 @@
 
 		<!-- main video -->
 		<section id="home" class="video-hero js-fullheight"
-			style="height: 700px; background-image: url(images/Florida_Project_2.jpg); background-size: cover; background-position: center center; background-attachment: fixed;">
+			style="height: 700px; background-image: url(images/big_images/big_image_21.jpg); background-size: cover; background-position: center center; background-attachment: fixed;">
 			<div class="overlay"></div>
 			<a class="player"
 				data-property="{videoURL:'',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:false, startAt:0, opacity:1, quality:'default'}"></a>
@@ -160,11 +158,13 @@
 								친구들의</br> 디즈니월드 보다 신나는 무지개 어드벤처!
 							</h3>
 							<div>
-								<a href="<%=request.getContextPath()%>/#"
+								<a
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=21"
 									class="btn btn-primary py-3 px-4 main-btn">▶ 재생</a>
 							</div>
 							<div>
-								<a href="<%=request.getContextPath()%>/#"
+								<a
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Bookmark&num=21"
 									class="btn btn-primary py-3 px-4 main-btn">╋ 찜한 콘텐츠</a>
 							</div>
 						</div>
@@ -202,9 +202,9 @@
 					<div class="col-md-6 col-lg-3">
 						<div class="model-entry">
 							<a
-								href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=11">
+								href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=6">
 								<span class="model-img"
-								style="background-image: url(images/movie_image_11.jpg);">
+								style="background-image: url(images/movie_image_6.jpg);">
 							</span>
 							</a>
 						</div>
@@ -213,9 +213,9 @@
 					<div class="col-md-6 col-lg-3">
 						<div class="model-entry">
 							<a
-								href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=6">
+								href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=12">
 								<span class="model-img"
-								style="background-image: url(images/movie_image_6.jpg);">
+								style="background-image: url(images/movie_image_12.jpg);">
 							</span>
 							</a>
 						</div>
@@ -246,7 +246,8 @@
 
 					<div class="view-more">
 						<p>
-							<a href="<%=request.getContextPath()%>/model.html"
+							<a
+								href="<%=request.getContextPath()%>/MainServlet?command=Movie_Category"
 								class="btn btn-white py-6 px-6">콘텐츠 더보기</a>
 						</p>
 					</div>
@@ -273,7 +274,8 @@
 						</c:forEach>
 						<div class="view-more">
 							<p>
-								<a href="<%=request.getContextPath()%>/model.html"
+								<a
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_MyContents"
 									class="btn btn-white py-6 px-6">콘텐츠 더보기</a>
 							</p>
 						</div>
@@ -301,7 +303,8 @@
 
 					<div class="view-more">
 						<p>
-							<a href="<%=request.getContextPath()%>/model.html"
+							<a
+								href="<%=request.getContextPath()%>/MainServlet?command=Movie_Category&condition=2"
 								class="btn btn-white py-6 px-6">콘텐츠 더보기</a>
 						</p>
 					</div>
@@ -343,12 +346,16 @@
 											</div>
 										</div>
 										<!-- <h3 class="heading mt-3">
-											<a href="<%=request.getContextPath()%>/#">Asia's Next Top
+											<a href="">Asia's Next Top
 												Model</a>
 										</h3> -->
-										<p>${list_Review.content }</p>
+										<div>
+											<p class="review-text-line">${list_Review.content }</p>
+										</div>
 										<p>
-											<a href="#" class="btn btn-primary">Read more</a>
+											<a
+												href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=${list_Review.no}#${list_Review.commentno }"
+												class="btn btn-primary">Read more</a>
 										</p>
 									</div>
 								</div>
@@ -362,94 +369,15 @@
 
 
 		<div class="txt-content">트렌드 추천</div>
-		<section class="ftco-section testimony-section img"
-			style="background-image: url(images/bg_2.jpg);">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row d-md-flex justify-content-center">
-					<div class="col-md-8 ftco-animate">
-						<div class="carousel-testimony owl-carousel">
-							<div class="item">
-								<div class="testimony-wrap text-center">
-									<div class="user-img mb-5"
-										style="background-image: url(images/person_1.jpg)">
-										<span
-											class="quote d-flex align-items-center justify-content-center">
-											<i class="icon-quote-left"></i>
-										</span>
-									</div>
-									<div class="text">
-										<p class="mb-5">Far far away, behind the word mountains,
-											far from the countries Vokalia and Consonantia, there live
-											the blind texts. Separated they live in Bookmarksgrove right
-											at the coast of the Semantics, a large language ocean.</p>
-										<p class="name">Mike Lewis</p>
-										<span class="position">Architect</span>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="testimony-wrap text-center">
-									<div class="user-img mb-5"
-										style="background-image: url(images/person_2.jpg)">
-										<span
-											class="quote d-flex align-items-center justify-content-center">
-											<i class="icon-quote-left"></i>
-										</span>
-									</div>
-									<div class="text">
-										<p class="mb-5">Far far away, behind the word mountains,
-											far from the countries Vokalia and Consonantia, there live
-											the blind texts. Separated they live in Bookmarksgrove right
-											at the coast of the Semantics, a large language ocean.</p>
-										<p class="name">Dennis Green</p>
-										<span class="position">Architect</span>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="testimony-wrap text-center">
-									<div class="user-img mb-5"
-										style="background-image: url(images/person_3.jpg)">
-										<span
-											class="quote d-flex align-items-center justify-content-center">
-											<i class="icon-quote-left"></i>
-										</span>
-									</div>
-									<div class="text">
-										<p class="mb-5">Far far away, behind the word mountains,
-											far from the countries Vokalia and Consonantia, there live
-											the blind texts. Separated they live in Bookmarksgrove right
-											at the coast of the Semantics, a large language ocean.</p>
-										<p class="name">Dennis Green</p>
-										<span class="position">Architect</span>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="testimony-wrap text-center">
-									<div class="user-img mb-5"
-										style="background-image: url(images/person_3.jpg)">
-										<span
-											class="quote d-flex align-items-center justify-content-center">
-											<i class="icon-quote-left"></i>
-										</span>
-									</div>
-									<div class="text">
-										<p class="mb-5">Far far away, behind the word mountains,
-											far from the countries Vokalia and Consonantia, there live
-											the blind texts. Separated they live in Bookmarksgrove right
-											at the coast of the Semantics, a large language ocean.</p>
-										<p class="name">Dennis Green</p>
-										<span class="position">Customer</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div class="container-view-slide">
+				<c:forEach var="list_Hits" items="${list_Hits }" varStatus="vs"
+						begin="4" end="7">
+				<div class="box-view-slide">
+					<a href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=${list_Hits.no}" class="box-view-slide"><img src="${list_Hits.img_2 }" ></a>
+					<span>${list_Hits.title}</span>
 				</div>
+				</c:forEach>
 			</div>
-		</section>
 
 
 		<footer class="ftco-footer ftco-section img">
@@ -458,19 +386,18 @@
 				<div class="ftco-footer-widget">
 					<!--<h2 class="ftco-heading-2">Site Links</h2>-->
 					<ul class="list-unstyled">
-						<li><a href="<%=request.getContextPath()%>/#"
+						<li><a href="javascript:;"
 							class="py-2 d-block">Home</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="<%=request.getContextPath()%>/javascript:;"
-							class="py-2 d-block">Category</a></li>
+						<li><a href="javascript:;" class="py-2 d-block">Category</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="<%=request.getContextPath()%>/javascript:;"
+						<li><a href="javascript:;"
 							class="py-2 d-block">My Contents</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="<%=request.getContextPath()%>/javascript:;"
+						<li><a href="javascript:;"
 							class="py-2 d-block">Customer Service Center</a></li>
 						<li class="py-2-line d-block">|</li>
-						<li><a href="<%=request.getContextPath()%>/javascript:;"
+						<li><a href="javascript:;"
 							class="py-2 d-block">My Page</a></li>
 						<br>
 					</ul>
@@ -505,7 +432,7 @@
 	</div>
 
 	<!-- Modal -->
-	<div class="modal fade" id="modalRequest" tabindex="-1" role="dialog"
+	<!-- <div class="modal fade" id="modalRequest" tabindex="-1" role="dialog"
 		aria-labelledby="modalRequestLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -554,7 +481,7 @@
 
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!--script-->
 	<script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>

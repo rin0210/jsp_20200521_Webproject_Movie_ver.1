@@ -232,16 +232,16 @@ public class CommentDAO {
 			String sql = "select * from recentreview order by writedate desc";
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-			cdto = new CommentDTO();
-			cdto.setNo(rs.getString("no"));
-			cdto.setImg_1(rs.getString("img_1"));
-			cdto.setCommentno(rs.getInt("commentno"));
-			cdto.setMovieno(rs.getInt("movieno"));
-			cdto.setId(rs.getString("id"));
-			cdto.setName(rs.getString("name"));
-			cdto.setContent(rs.getString("content"));
-			cdto.setWritedate(rs.getString("writedate"));
-			reviewList.add(cdto);
+				cdto = new CommentDTO();
+				cdto.setNo(rs.getString("no"));
+				cdto.setImg_1(rs.getString("img_1"));
+				cdto.setCommentno(rs.getInt("commentno"));
+				cdto.setMovieno(rs.getInt("movieno"));
+				cdto.setId(rs.getString("id"));
+				cdto.setName(rs.getString("name"));
+				cdto.setContent(rs.getString("content"));
+				cdto.setWritedate(rs.getString("writedate"));
+				reviewList.add(cdto);
 			}
 
 		} catch (Exception e) {
@@ -260,5 +260,98 @@ public class CommentDAO {
 			}
 		}
 		return reviewList;
+	}
+
+	// 글 수정
+	public boolean updateOne(String body, int no) {
+		try {
+			conn = DBManager.getConnection();
+			String sql = "update commentMemo set content = ?, set writedate = sysdate where commentno = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, body);
+			pstmt.setInt(2, no);
+
+			int r = pstmt.executeUpdate();
+
+			if (r > 0) {
+				return true;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+
+	// 원글 삭제
+	public boolean delOne(int commentno) {
+		try {
+			conn = DBManager.getConnection();
+			String sql = "delete from commentmemo where grp = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, commentno);
+
+			int r = pstmt.executeUpdate();
+
+			if (r > 0) {
+				return true;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+
+	// 댓글 삭제
+	public boolean delReOne(int seq) {
+		String sql = null;
+		try {
+			conn = DBManager.getConnection();
+
+			sql = "delete from commentmemo where seq = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, seq);
+			
+			int r = pstmt.executeUpdate();
+
+			if (r > 0) {
+				return true;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
 	}
 }

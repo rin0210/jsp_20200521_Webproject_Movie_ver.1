@@ -45,7 +45,7 @@
 
 	<c:if test="${result==6 }">
 		<script type="text/javascript">
-			alert("회원 전용 페이지입니다.");
+			alert("회원 전용입니다.");
 			history.back();
 		</script>
 	</c:if>
@@ -56,7 +56,7 @@
 			document.location.href = "index.jsp"
 		</script>
 	</c:if>
-
+	
 
 </body>
 </html>

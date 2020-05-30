@@ -117,7 +117,7 @@
 									href="javascript:;">마이페이지&ensp;&ensp;</a></li>
 							</div>
 							<!-- Search Form -->
-							<div class="nav-item-img-div">
+						<div class="nav-item-img-div">
 								<li class="nav-item-img1">
 									<!-- Search btn -->
 									<div id="searchbtn">
@@ -126,14 +126,15 @@
 									</div>
 								</li>
 								<li class="nav-item-img2"><a
-									href="<%=request.getContextPath()%>/#"
+									href="MainServlet?command=Movie_Search"
 									class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a></li>
 							</div>
 						</ul>
 					</nav>
 				</div>
 				<div class="header-search-form ml-auto">
-					<form action="#">
+					<form action="MainServlet?command=Movie_Search" method="post"
+						name="searchForm">
 						<input type="search" class="form-control form-control-search"
 							placeholder="Input your keyword then press enter..." id="search"
 							name="search"> <input class="d-none" type="submit"
@@ -194,13 +195,13 @@
 		</section>
 
 		<section class="ftco-section-mypage-2">
-			<div class="container">
-				<div class="row">
+			<div class="container-mypage">
+				<div class="row-mypage">
 					<div class="col-md-3">
 						<div class="services ftco-animate text-center">
 							<div class="info mt-4">
 								<h3 class="mb-4">코멘트</h3>
-								<p>21</p>
+								<p>-</p>
 							</div>
 						</div>
 					</div>
@@ -208,26 +209,19 @@
 						<div class="services ftco-animate text-center">
 							<div class="info mt-4">
 								<h3 class="mb-4">찜목록</h3>
-								<p>42</p>
+								<p>-</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="services ftco-animate text-center">
 							<div class="info mt-4">
-								<h3 class="mb-4">좋아요</h3>
-								<p>15</p>
+								<h3 class="mb-4">평가수</h3>
+								<p>-</p>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3">
-						<div class="services ftco-animate text-center">
-							<div class="info mt-4">
-								<h3 class="mb-4">싫어요</h3>
-								<p>11</p>
-							</div>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 			<div class="logout-div">

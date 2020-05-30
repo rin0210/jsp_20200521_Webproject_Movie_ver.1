@@ -103,17 +103,20 @@
 								<li class="nav-item-img1">
 									<!-- Search btn -->
 									<div id="searchbtn">
-										<img id="searchimg" src="<%=request.getContextPath()%>/images/search.png" alt="">
+										<img id="searchimg"
+											src="<%=request.getContextPath()%>/images/search.png" alt="">
 									</div>
 								</li>
-								<li class="nav-item-img2"><a href="#"
+								<li class="nav-item-img2"><a
+									href="MainServlet?command=Movie_Search"
 									class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a></li>
 							</div>
 						</ul>
 					</nav>
 				</div>
 				<div class="header-search-form ml-auto">
-					<form action="#">
+					<form action="MainServlet?command=Movie_Search" method="post"
+						name="searchForm">
 						<input type="search" class="form-control form-control-search"
 							placeholder="Input your keyword then press enter..." id="search"
 							name="search"> <input class="d-none" type="submit"

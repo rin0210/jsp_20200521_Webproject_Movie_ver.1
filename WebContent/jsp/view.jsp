@@ -209,7 +209,7 @@ star-input>.input.focus {
 									href="<%=request.getContextPath()%>/MainServlet?command=Movie_MyContents">찜한콘텐츠
 								</a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="<%=request.getContextPath()%>/blog.html">고객문의 </a></li>
+									href="javascript:;">고객문의 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
 									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Identification">마이페이지&ensp;&ensp;</a></li>
 							</div>
@@ -223,14 +223,15 @@ star-input>.input.focus {
 									</div>
 								</li>
 								<li class="nav-item-img2"><a
-									href="<%=request.getContextPath()%>/#"
+									href="MainServlet?command=Movie_Search"
 									class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a></li>
 							</div>
 						</ul>
 					</nav>
 				</div>
 				<div class="header-search-form ml-auto">
-					<form action="#">
+					<form action="MainServlet?command=Movie_Search" method="post"
+						name="searchForm">
 						<input type="search" class="form-control form-control-search"
 							placeholder="Input your keyword then press enter..." id="search"
 							name="search"> <input class="d-none" type="submit"
@@ -248,12 +249,21 @@ star-input>.input.focus {
 					<div
 						class="row align-items-center justify-content-center text-center">
 
-						<div class="col-md-7" data-aos="fade-up" data-aos-delay="400">
-							<a
-								href="<%=request.getContextPath()%>/https://vimeo.com/channels/staffpicks/93951774"
-								class="play-single-big mb-4 d-inline-block popup-vimeo"><span
-								class="icon-play"></span></a>
-						</div>
+						<c:choose>
+							<c:when test="${not empty sessionScope.sessionId && myLvl >= 1}">
+								<div class="col-md-7" data-aos="fade-up" data-aos-delay="400">
+									<a href="<%=request.getContextPath()%>/${mdto.video }"
+										class="play-single-big mb-4 d-inline-block popup-vimeo"><span
+										class="icon-play"></span></a>
+								</div>
+							</c:when>
+							<c:otherwise>
+								<div class="noPay-div">
+									<p class="noPay">유료회원이 되시면 시청 가능합니다.</p>
+								</div>
+							</c:otherwise>
+
+						</c:choose>
 					</div>
 				</div>
 			</div>
@@ -360,25 +370,20 @@ star-input>.input.focus {
 										</span>
 									</c:when>
 									<c:otherwise>
-									<span class="input"> <input type="radio"
+										<span class="input"> <input type="radio"
 											name="star-input" value="1" id="p1"> <label for="p1">1</label>
 											<input type="radio" name="star-input" value="2" id="p2">
 											<label for="p2">2</label> <input type="radio"
 											name="star-input" value="3" id="p3"> <label for="p3">3</label>
 											<input type="radio" name="star-input" value="4" id="p4">
 											<label for="p4">4</label> <input type="radio"
-											name="star-input" value="5" id="p5" > <label
-											for="p5">5</label> <input type="hidden" name="movie_no"
-											value="${mdto.no }">
+											name="star-input" value="5" id="p5"> <label for="p5">5</label>
+											<input type="hidden" name="movie_no" value="${mdto.no }">
 										</span>
 									</c:otherwise>
-								</c:choose> 
-								
-								<!-- <output for="star-input">
+								</c:choose> <!-- <output for="star-input">
 									<b>0</b>점
-								</output>  -->
-								
-								<input type="submit"
+								</output>  --> <input type="submit"
 								class="btn btn-star btn-primary py-3-star px-4-star contents-view-btn"
 								value="평가하기">
 							</span>
@@ -406,18 +411,48 @@ star-input>.input.focus {
 				<ul class="comment-list">
 					<c:forEach var="commentList" items="${commentList }">
 						<c:if test="${commentList.lvl==0 }">
+
 							<li class="comment">
+
 								<div class="vcard bio">
-									<!-- <img src="<%=request.getContextPath()%>/${commentList.img }" alt="Image placeholder"> -->
 									<img
 										src="<%=request.getContextPath()%>/images/profile_images/${commentList.img }"
-										alt="Image placeholder">
+										alt="Image placeholder" name="cimg">
 								</div>
-								<div class="comment-body">
-									<h3>${commentList.name }</h3>
-									<!-- <div class="meta">June 27, 2018 at 2:21pm</div> -->
-									<div class="meta">${commentList.writedate }</div>
-									<p>${commentList.content }</p>
+								<div class="comment-body" id="${commentList.commentno }">
+									<form action="" method="post" name="commentForm">
+										<h3 class="h3-view">
+											<input type="text" class="comment-text-name" name="cname"
+												maxlength="50" readonly="readonly"
+												value="${commentList.name }">
+
+											<c:if test="${commentList.id eq sessionScope.sessionId}">
+												<input type="submit" class="mod-del cmt-mod" value="수정"
+													formaction="MainServlet?command=Movie_CommentMod_Form">
+
+												<input type="submit" class="mod-del cmt-del" value="삭제"
+													formaction="MainServlet?command=Movie_CommentDel">
+
+											</c:if>
+
+											<input type="hidden" name="cno"
+												value="${commentList.commentno }"> <input
+												type="hidden" name="mno" value="${commentList.movieno }">
+											<input type="hidden" name="seq" value="${commentList.seq}">
+										</h3>
+										<!-- <div class="meta">June 27, 2018 at 2:21pm</div> -->
+										<div class="meta">
+											<input type="text" class="comment-text-date" name="cdate"
+												maxlength="50" readonly="readonly"
+												value="${commentList.writedate }">
+										</div>
+										<p>
+											<textarea name="cbody" class="comment-text-body"
+												readonly="readonly">${commentList.content }</textarea>
+										</p>
+
+									</form>
+
 									<form action="MainServlet?command=Movie_reComment" method=post
 										name="recommentForm">
 										<div class="searchBox">
@@ -428,31 +463,60 @@ star-input>.input.focus {
 											<input type="hidden" name="seq" value="${commentList.seq }">
 											<input type="hidden" name="lvl" value="${commentList.lvl }">
 											<c:if test="${not empty sessionScope.sessionId }">
-												<p>
-													<input type="submit" class="reply" value="REPLY">
-												</p>
+												<span> <input type="submit" class="reply"
+													value="REPLY">
+												</span>
 											</c:if>
 										</div>
 									</form>
 								</div>
+							</li>
 						</c:if>
+
 						<c:if test="${commentList.lvl==1 }">
 							<ul class="children">
 								<li class="comment">
 									<div class="vcard bio">
 										<img
 											src="<%=request.getContextPath()%>/images/profile_images/${commentList.img }"
-											alt="Image placeholder">
+											alt="Image placeholder" name="cimg">
 									</div>
 									<div class="comment-body">
-										<h3>${commentList.name }</h3>
-										<div class="meta">${commentList.writedate }</div>
-										<p>${commentList.content }</p>
+										<form action="" method="post" name="replyForm">
+											<h3>
+												<input type="text" class="comment-text-name" name="cname"
+													maxlength="50" readonly="readonly"
+													value="${commentList.name }"> <input type="hidden"
+													name="cno" value="${commentList.commentno }"> <input
+													type="hidden" name="mno" value="${commentList.movieno }">
+												<input type="hidden" name="seq" value="${commentList.seq}">
+											</h3>
+											<!-- <div class="meta">June 27, 2018 at 2:21pm</div> -->
+											<div class="meta">
+												<input type="text" class="comment-text-date" name="cdate"
+													maxlength="50" readonly="readonly"
+													value="${commentList.writedate }">
+											</div>
+											<p>
+												<textarea name="cbody" class="comment-text-body"
+													readonly="readonly">${commentList.content }</textarea>
+											</p>
+											<c:if test="${commentList.id eq sessionScope.sessionId}">
+												<span> <input type="submit" class="mod-del cmt-mod"
+													value="수정"
+													formaction="MainServlet?command=Movie_CommentMod_Form">
+												</span>
+												<span> <input type="submit" class="mod-del cmt-del"
+													value="삭제"
+													formaction="MainServlet?command=Movie_CommentDel">
+												</span>
+											</c:if>
+										</form>
 									</div>
+
 								</li>
 							</ul>
 						</c:if>
-						</li>
 					</c:forEach>
 				</ul>
 
@@ -491,7 +555,6 @@ star-input>.input.focus {
 						</form>
 					</div>
 				</c:if>
-
 			</div>
 		</section>
 
@@ -566,6 +629,7 @@ star-input>.input.focus {
 		<script src="<%=request.getContextPath()%>/js/main.js"></script>
 		<script src="<%=request.getContextPath()%>/js/jquery-1.11.3.min.js"></script>
 		<script src="<%=request.getContextPath()%>/js/star.js"></script>
+		<script src="<%=request.getContextPath()%>/js/script.js"></script>
 </body>
 
 </html>

@@ -176,3 +176,21 @@ function profileUpdate() {
 			.open(url, "_blank_1",
 					"toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=500,height=510");
 }
+
+//function more() {
+//	var con = document.getElementById("moreReply");
+//	if(con.style.display=="none"){
+//		con.style.display = "block";
+//	} else{
+//		con.style.display = "none";
+//	}
+//}
+
+//function mod(){
+//    alert(a);
+//	var url = "jsp/commentMod.jsp";
+//	window
+//	.open(url, "_blank_1",
+//	"toolbar=no,menubar=no,scrollbars=yes,resizable=no,width=500,height=620");
+//
+//}

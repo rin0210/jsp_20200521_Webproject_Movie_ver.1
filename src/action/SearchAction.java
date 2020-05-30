@@ -11,30 +11,25 @@ import javax.servlet.http.HttpServletResponse;
 import db.MovieDAO;
 import db.MovieDTO;
 
-public class CategoryAction implements Action {
+public class SearchAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String condition = request.getParameter("condition");
+		String search = request.getParameter("search");
+		System.out.println("검색할 단어: " + search);
 
 		MovieDAO mdao = MovieDAO.getInstance();
 
-		if (condition == null) {
-			// 조회순
-			ArrayList<MovieDTO> array_Hits = mdao.getAll_Hits();
-			if (array_Hits != null) {
-				request.setAttribute("list", array_Hits);
-				System.out.println("all movies: " + array_Hits.size());
-			}
-		} else if (condition.equals("2")) {
-			// 최신순
-			ArrayList<MovieDTO> array_Recent = mdao.getAll_Recent();
-			if (array_Recent != null) {
-				request.setAttribute("list", array_Recent);
-				System.out.println("all movies: " + array_Recent.size());
+		// 최신순
+		ArrayList<MovieDTO> array_Recent = mdao.getAll_Recent();
+		ArrayList<MovieDTO> array_Search = new ArrayList<MovieDTO>();
+		for (MovieDTO m : array_Recent) {
+			if (m.getTitle().indexOf(search) > -1) {
+				array_Search.add(m);
 			}
 		}
-
+		
+		request.setAttribute("list", array_Search);
 		String view = "/jsp/category.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);

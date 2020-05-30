@@ -13,6 +13,8 @@ import db.BookmarkDAO;
 import db.CommentDAO;
 import db.CommentDTO;
 import db.HitsDAO;
+import db.MemberDAO;
+import db.MemberDTO;
 import db.MovieDAO;
 import db.MovieDTO;
 import db.StarDAO;
@@ -56,6 +58,11 @@ public class ViewAction implements Action {
 //			} else {
 //				request.setAttribute("result", 0);
 //			}
+			
+			MemberDAO mbdao = MemberDAO.getInstance();
+			MemberDTO mbdto = mbdao.selMyInfo(userId);
+			request.setAttribute("myLvl", mbdto.getLev());
+			System.out.println("my level: "+mbdto.getLev());
 		}
 
 		// 댓글 가져오기
@@ -63,7 +70,9 @@ public class ViewAction implements Action {
 		ArrayList<CommentDTO> commentList = cdao.selectCommentByNum(num);
 		int cnt = 0;
 		for (CommentDTO c : commentList) {
-			cnt++;
+			if(c.getLvl()==0) {
+				cnt++;
+			}
 		}
 		System.out.println("댓글 개수: " + cnt);
 
