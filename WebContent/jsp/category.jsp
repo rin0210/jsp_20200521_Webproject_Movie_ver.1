@@ -89,11 +89,11 @@
 									class="nav-link" href="<%=request.getContextPath()%>/MainServlet?command=Movie_Home">홈 <span
 										class="sr-only">(current)</span></a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="javascript:;">영화 </a></li>
+									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Category">영화 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
 									href="<%=request.getContextPath()%>/MainServlet?command=Movie_MyContents">찜한콘텐츠 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="javascript;">고객문의 </a></li>
+									href="javascript:;">고객문의 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
 									href="<%=request.getContextPath()%>/MainServlet?command=Movie_Identification">마이페이지&ensp;&ensp;</a></li>
 							</div>

@@ -182,7 +182,7 @@
 							<a
 								href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=1">
 								<span class="model-img"
-								style="background-image: url(images/movie_image_1.jpg);">
+								style="background-image: url(images/poster_images/movie_image_1.jpg);">
 							</span>
 							</a>
 						</div>
@@ -193,7 +193,7 @@
 							<a
 								href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=25">
 								<span class="model-img"
-								style="background-image: url(images/movie_image_25.jpg);">
+								style="background-image: url(images/poster_images/movie_image_25.jpg);">
 							</span>
 							</a>
 						</div>
@@ -204,7 +204,7 @@
 							<a
 								href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=6">
 								<span class="model-img"
-								style="background-image: url(images/movie_image_6.jpg);">
+								style="background-image: url(images/poster_images/movie_image_6.jpg);">
 							</span>
 							</a>
 						</div>
@@ -215,7 +215,7 @@
 							<a
 								href="<%=request.getContextPath()%>/MainServlet?command=Movie_View&num=12">
 								<span class="model-img"
-								style="background-image: url(images/movie_image_12.jpg);">
+								style="background-image: url(images/poster_images/movie_image_12.jpg);">
 							</span>
 							</a>
 						</div>

@@ -17,7 +17,7 @@
 
 	<c:if test="${result==2 }">
 		<script type="text/javascript">
-			alert("아이디와 패스워드를 다시 확인해주세요.");
+			alert("아이디와 비밀번호를 다시 확인해주세요.");
 			history.back();
 		</script>
 	</c:if>

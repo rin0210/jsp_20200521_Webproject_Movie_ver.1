@@ -242,32 +242,39 @@ star-input>.input.focus {
 		</div>
 
 		<!-- video -->
-		<section class="ftco-section-catogory-view ftco-no-pb"
-			style="background-image: url(${mdto.img_2 }); background-repeat: no-repeat; background-position: center center; background-attachment:fixed;">
-			<div class="site-blocks-cover overlay inner-page-cover">
-				<div class="container">
-					<div
-						class="row align-items-center justify-content-center text-center">
+		<c:choose>
+			<c:when test="${not empty sessionScope.sessionId && myLvl >= 2}">
+				<section class="ftco-section-catogory-view ftco-no-pb">
+					<video controls poster="${mdto.img_2 }">
+						<source src="<%=request.getContextPath()%>/${mdto.video }"
+							type="video/mp4">
+						<strong>Your browser does not support the video tag.</strong>
+					</video>
+					<div class="container">
+						<div
+							class="row align-items-center justify-content-center text-center">
 
-						<c:choose>
-							<c:when test="${not empty sessionScope.sessionId && myLvl >= 1}">
-								<div class="col-md-7" data-aos="fade-up" data-aos-delay="400">
-									<a href="<%=request.getContextPath()%>/${mdto.video }"
-										class="play-single-big mb-4 d-inline-block popup-vimeo"><span
-										class="icon-play"></span></a>
-								</div>
-							</c:when>
-							<c:otherwise>
-								<div class="noPay-div">
-									<p class="noPay">유료회원이 되시면 시청 가능합니다.</p>
-								</div>
-							</c:otherwise>
-
-						</c:choose>
+						</div>
 					</div>
-				</div>
-			</div>
-		</section>
+				</section>
+			</c:when>
+
+			<c:otherwise>
+				<section class="ftco-section-catogory-view ftco-no-pb"
+					style="background-image: url(${mdto.img_2 }); background-repeat: no-repeat; background-position: center center; background-attachment:fixed;">
+					<div class="site-blocks-cover overlay inner-page-cover">
+						<div class="container">
+							<div
+								class="row align-items-center justify-content-center text-center">
+								<div class="noPay-div">
+									<p class="noPay">이용권을 구매하시면 시청 가능합니다.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</c:otherwise>
+		</c:choose>
 
 		<main>
 			<section class="contents-view-detail contents-view-detail-1">
@@ -483,11 +490,22 @@ star-input>.input.focus {
 									</div>
 									<div class="comment-body">
 										<form action="" method="post" name="replyForm">
-											<h3>
+											<h3 class="h3-view">
 												<input type="text" class="comment-text-name" name="cname"
 													maxlength="50" readonly="readonly"
-													value="${commentList.name }"> <input type="hidden"
-													name="cno" value="${commentList.commentno }"> <input
+													value="${commentList.name }">
+
+												<c:if test="${commentList.id eq sessionScope.sessionId}">
+													<input type="submit" class="mod-del cmt-mod" value="수정"
+														formaction="MainServlet?command=Movie_CommentMod_Form">
+
+													<input type="submit" class="mod-del cmt-del" value="삭제"
+														formaction="MainServlet?command=Movie_CommentDel">
+
+												</c:if>
+
+												<input type="hidden" name="cno"
+													value="${commentList.commentno }"> <input
 													type="hidden" name="mno" value="${commentList.movieno }">
 												<input type="hidden" name="seq" value="${commentList.seq}">
 											</h3>
@@ -501,16 +519,7 @@ star-input>.input.focus {
 												<textarea name="cbody" class="comment-text-body"
 													readonly="readonly">${commentList.content }</textarea>
 											</p>
-											<c:if test="${commentList.id eq sessionScope.sessionId}">
-												<span> <input type="submit" class="mod-del cmt-mod"
-													value="수정"
-													formaction="MainServlet?command=Movie_CommentMod_Form">
-												</span>
-												<span> <input type="submit" class="mod-del cmt-del"
-													value="삭제"
-													formaction="MainServlet?command=Movie_CommentDel">
-												</span>
-											</c:if>
+
 										</form>
 									</div>
 

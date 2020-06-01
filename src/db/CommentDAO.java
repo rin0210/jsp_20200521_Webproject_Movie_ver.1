@@ -266,7 +266,7 @@ public class CommentDAO {
 	public boolean updateOne(String body, int no) {
 		try {
 			conn = DBManager.getConnection();
-			String sql = "update commentMemo set content = ?, set writedate = sysdate where commentno = ?";
+			String sql = "update commentMemo set content = ?, writedate = sysdate where commentno = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, body);
 			pstmt.setInt(2, no);

@@ -55,7 +55,7 @@
 	<!--카테고리 메뉴-->
 	<div class="page">
 		<nav id="colorlib-main-nav" role="navigation">
-			<a href="<%=request.getContextPath()%>/#"
+			<a href="javascript:;"
 				class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
 			<div class="js-fullheight colorlib-table">
 				<!--<div class="img" style="background-image: url(images/image_4.jpg);"></div>-->
@@ -112,7 +112,7 @@
 									href="<%=request.getContextPath()%>/MainServlet?command=Movie_MyContents">찜한콘텐츠
 								</a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
-									href="<%=request.getContextPath()%>/blog.html">고객문의 </a></li>
+									href="javascript:;">고객문의 </a></li>
 								<li class="nav-item nav-item-txt"><a class="nav-link"
 									href="javascript:;">마이페이지&ensp;&ensp;</a></li>
 							</div>
