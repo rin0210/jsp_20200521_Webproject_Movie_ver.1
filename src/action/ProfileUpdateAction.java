@@ -50,9 +50,11 @@ public class ProfileUpdateAction implements Action {
 				// request.setAttribute("fname", fileName);
 			} // else
 			String name = multi.getParameter("name");
-			
+
 			if (mdao.updateProfile(name, fileName, id)) {
 				System.out.println("프로필 수정 성공!!");
+				session.setAttribute("sessionImg", fileName);
+				System.out.println("세션이미지 수정: " + fileName);
 				String view = "jsp/alert.jsp";
 				request.setAttribute("result", 5);
 				RequestDispatcher dispatcher = request.getRequestDispatcher(view);

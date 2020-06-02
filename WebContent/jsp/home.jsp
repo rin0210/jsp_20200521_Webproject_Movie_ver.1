@@ -318,7 +318,6 @@
 					<div class="row justify-content-center">
 						<div
 							class="col-md-8 mb-5-rc heading-section text-center ftco-animate">
-							<!-- <span class="subheading">Blog</span> -->
 							<h22 class="mb-4">Recent Comment</h22>
 							<p class="mb-5-rc recent-cmt">실시간 추천 코멘트</p>
 						</div>
